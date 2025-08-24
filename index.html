@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Arquitetura de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --success-color: #27ae60;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .header-graphic {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.1;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" fill="none" /><rect x="30" y="30" width="40" height="40" stroke="white" stroke-width="2" fill="none" /><polygon points="50,20 80,80 20,80" stroke="white" stroke-width="2" fill="none" /></svg>');
+            background-size: 200px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            padding: 1rem 0;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            background-color: #f8f9fa;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 20px;
+        }
+        
+        .course-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .course-intro h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        .disciplines-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .discipline-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .discipline-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--secondary-color);
+        }
+        
+        .discipline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .discipline-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .discipline-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .discipline-card .discipline-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        /* Course Highlights */
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .highlight-card {
+            flex: 1;
+            min-width: 250px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .highlight-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+        
+        .footer-section p, .footer-section li {
+            margin-bottom: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            opacity: 0.7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem 20px;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links a {
+                padding: 0.5rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-graphic"></div>
+        <div class="header-content">
+            <h1>Arquitetura de Software</h1>
+            <p>Um curso completo que prepara profissionais para projetar, implementar e gerenciar sistemas de software robustos, escaláveis e seguros</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Disciplinas</a></li>
+                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Calendário</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="course-intro animate">
+            <h2>Curso de Arquitetura de Software</h2>
+            <p>Este curso é composto por disciplinas cuidadosamente selecionadas para fornecer uma formação completa em arquitetura de software, desde os fundamentos até as tecnologias mais avançadas e modernas.</p>
+        </div>
+
+        <div class="highlights">
+            <div class="highlight-card animate delay-1">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>14 Disciplinas</h3>
+                <p>Conteúdo abrangente e atualizado</p>
+            </div>
+            <div class="highlight-card animate delay-2">
+                <i class="fas fa-clock"></i>
+                <h3>360 Horas</h3>
+                <p>Carga horária completa</p>
+            </div>
+            <div class="highlight-card animate delay-3">
+                <i class="fas fa-certificate"></i>
+                <h3>Certificado</h3>
+                <p>Reconhecido pelo mercado</p>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Disciplinas do Curso</h2>
+        
+        <div class="disciplines-container">
+            <div class="discipline-card animate">
+                <div class="discipline-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3>Ética Geral e Profissional</h3>
+                <p>Fundamentos éticos para atuação profissional responsável no desenvolvimento de software.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-1">
+                <div class="discipline-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <h3>Metodologia Científica</h3>
+                <p>Métodos e técnicas de pesquisa aplicados à área de tecnologia e desenvolvimento de software.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-2">
+                <div class="discipline-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>Direitos Humanos</h3>
+                <p>Estudo dos direitos fundamentais e sua relação com a tecnologia e o desenvolvimento de software.</p>
+            </div>
+            
+            <div class="discipline-card animate">
+                <div class="discipline-icon">
+                    <i class="fas fa-hands"></i>
+                </div>
+                <h3>Língua Brasileira de Sinais – LIBRAS</h3>
+                <p>Comunicação em Libras para promover inclusão e acessibilidade no ambiente de tecnologia.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-1">
+                <div class="discipline-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Inovações Tecnológicas</h3>
+                <p>Tendências e avanços tecnológicos que estão moldando o futuro do desenvolvimento de software.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-2">
+                <div class="discipline-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>Princípios de Arquitetura de Software</h3>
+                <p>Fundamentos e conceitos essenciais para o projeto de arquiteturas de software eficientes.</p>
+            </div>
+            
+            <div class="discipline-card animate">
+                <div class="discipline-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Banco de Dados e Arquitetura para Big Data</h3>
+                <p>Projeto e implementação de bancos de dados e arquiteturas para tratamento de grandes volumes de dados.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-1">
+                <div class="discipline-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Arquitetura de Software e de Dados Seguros</h3>
+                <p>Técnicas e práticas para desenvolvimento de software seguro e proteção de dados.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-2">
+                <div class="discipline-icon">
+                    <i class="fab fa-node-js"></i>
+                </div>
+                <h3>Arquitetura de Software na Plataforma Node.js</h3>
+                <p>Desenvolvimento de arquiteturas de software utilizando a plataforma Node.js.</p>
+            </div>
+            
+            <div class="discipline-card animate">
+                <div class="discipline-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>DevOps e Gestão do Ciclo de Vida de Aplicações</h3>
+                <p>Integração entre desenvolvimento e operações e gestão do ciclo de vida completo de aplicações.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-1">
+                <div class="discipline-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3>Análise, Projeto e Avaliação de Arquitetura de Software</h3>
+                <p>Métodos e técnicas para análise, projeto e avaliação de arquiteturas de software.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-2">
+                <div class="discipline-icon">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h3>Processo Ágil de Desenvolvimento de Software (Scrum)</h3>
+                <p>Metodologias ágeis com foco no framework Scrum para gestão de projetos de software.</p>
+            </div>
+            
+            <div class="discipline-card animate">
+                <div class="discipline-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Arquitetura Orientada a Serviços e Microsserviços, Computação em Nuvem e Mobile</h3>
+                <p>Arquiteturas modernas baseadas em serviços, microsserviços, computação em nuvem e desenvolvimento mobile.</p>
+            </div>
+            
+            <div class="discipline-card animate delay-1">
+                <div class="discipline-icon">
+                    <i class="fas fa-chalkboard"></i>
+                </div>
+                <h3>Docência do Ensino Superior</h3>
+                <p>Preparação para atuação como docente no ensino superior na área de tecnologia.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Curso</h3>
+                <p>O curso de Arquitetura de Software oferece uma formação completa e atualizada, preparando profissionais para os desafios do mercado de tecnologia.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 1234</p>
+                <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                <p><i class="fas fa-envelope"></i> contato@arqsoft.com.br</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Disciplinas</a></li>
+                    <li><a href="#">Professores</a></li>
+                    <li><a href="#">Calendário</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Curso de Arquitetura de Software. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animação de entrada dos elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(function() {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
