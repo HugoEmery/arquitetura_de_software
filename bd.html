@@ -3,274 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Data - Resumo dos Conceitos</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #27ae60;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .summary-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .summary-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-        
-        .summary-card h2 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--secondary-color);
-        }
-        
-        .concept-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .concept-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .concept-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--secondary-color);
-        }
-        
-        .concept-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .concept-card ul {
-            list-style-type: none;
-            padding-left: 1rem;
-        }
-        
-        .concept-card li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .concept-card li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background-color: var(--primary-color);
-        }
-        
-        .progress-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: transparent;
-            z-index: 1000;
-        }
-        
-        .progress-bar {
-            height: 5px;
-            background: var(--secondary-color);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .nav-tab {
-            padding: 0.8rem 1.5rem;
-            background-color: white;
-            border: 1px solid #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-tab:first-child {
-            border-radius: 5px 0 0 5px;
-        }
-        
-        .nav-tab:last-child {
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .nav-tab.active {
-            background-color: var(--secondary-color);
-            color: white;
-            border-color: var(--secondary-color);
-        }
-        
-        .content-section {
-            display: none;
-        }
-        
-        .content-section.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            color: #777;
-            border-top: 1px solid #ddd;
-        }
-        
-        .completed {
-            position: relative;
-        }
-        
-        .completed::after {
-            content: '✓';
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            background-color: var(--success-color);
-            color: white;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            .concept-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-tabs {
-                flex-direction: column;
-            }
-            
-            .nav-tab {
-                border-radius: 5px !important;
-                margin-bottom: 5px;
-            }
-        }
-    </style>
+    <title>Big Data - Arquitetura de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">    
 </head>
 <body>
     <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
     </div>
 
+    <!-- Header -->
     <header>
-        <div class="container">
+        <div class="header-graphic"></div>
+        <div class="header-content">
             <h1>Banco de Dados e Arquitetura para Big Data</h1>
-            <p class="subtitle">Resumo interativo dos conceitos fundamentais</p>
+            <p>Conceitos fundamentais e aplicações práticas em arquitetura de software</p>
         </div>
     </header>
 
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html" class="active"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
     <div class="container">
-        <div class="nav-tabs">
-            <div class="nav-tab active"><a href="index.html">Início</a></div>
-            <div class="nav-tab" data-target="conceitos">Conceitos Fundamentais</div>
-            <div class="nav-tab" data-target="vantagens">Vantagens</div>
-            <div class="nav-tab" data-target="desafios">Desafios</div>
-            <div class="nav-tab" data-target="arquitetura">Arquitetura</div>
-            <div class="nav-tab" data-target="implementacao">Implementação</div>
+        <div class="course-intro animate">
+            <h2>Big Data na Arquitetura de Software</h2>
+            <p>Explore os conceitos fundamentais de Big Data e sua aplicação no desenvolvimento de arquiteturas de software modernas e escaláveis.</p>
+        </div>
+
+        <div class="content-tabs">
+            <div class="content-tab active" data-target="conceitos">Conceitos Fundamentais</div>
+            <div class="content-tab" data-target="vantagens">Vantagens</div>
+            <div class="content-tab" data-target="desafios">Desafios</div>
+            <div class="content-tab" data-target="arquitetura">Arquitetura</div>
+            <div class="content-tab" data-target="implementacao">Implementação</div>
         </div>
 
         <div class="content-section active" id="conceitos">
-            <div class="summary-card">
-                <h2>O que é Big Data?</h2>
+            <div class="discipline-card animate">
+                <h3>O que é Big Data?</h3>
                 <p>Big Data refere-se a tecnologias e práticas para gerenciar e analisar grandes volumes de dados de diversas fontes, com alta velocidade, buscando agregar valor aos negócios e maior confiabilidade nas decisões.</p>
                 <p>É caracterizado pelos <strong>5Vs</strong>:</p>
                 <ul>
@@ -283,7 +68,7 @@
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Tipos de Dados</h3>
                     <ul>
                         <li><strong>Dados Estruturados</strong>: Organizados em linhas e colunas (ex: bancos relacionais)</li>
@@ -291,7 +76,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Contexto Histórico</h3>
                     <ul>
                         <li>Termo "Big Data" mencionado pela primeira vez pela IEEE na década de 1990</li>
@@ -300,7 +85,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Fases do Processo de Análise</h3>
                     <ol>
                         <li>Aquisição e gravação</li>
@@ -314,13 +99,13 @@
         </div>
 
         <div class="content-section" id="vantagens">
-            <div class="summary-card">
-                <h2>Vantagens do Uso do Big Data</h2>
+            <div class="discipline-card animate">
+                <h3>Vantagens do Uso do Big Data</h3>
                 <p>O Big Data oferece diversas vantagens competitivas para organizações que implementam corretamente suas tecnologias e processos.</p>
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Conhecimento do Cliente</h3>
                     <ul>
                         <li>Estudo de hábitos de consumo</li>
@@ -329,7 +114,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Expansão de Mercado</h3>
                     <ul>
                         <li>Identificação de potenciais compradores</li>
@@ -338,7 +123,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Prevenção de Riscos</h3>
                     <ul>
                         <li>Análise em tempo real de variáveis de mercado</li>
@@ -347,7 +132,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Vantagem Competitiva</h3>
                     <ul>
                         <li>Monitoramento da concorrência</li>
@@ -359,13 +144,13 @@
         </div>
 
         <div class="content-section" id="desafios">
-            <div class="summary-card">
-                <h2>Desafios da Utilização do Big Data</h2>
+            <div class="discipline-card animate">
+                <h3>Desafios da Utilização do Big Data</h3>
                 <p>A implementação de soluções de Big Data apresenta diversos desafios técnicos, organizacionais e éticos que devem ser considerados.</p>
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Privacidade e Segurança</h3>
                     <ul>
                         <li>Proteção da privacidade dos clientes</li>
@@ -374,7 +159,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Capacitação Técnica</h3>
                     <ul>
                         <li>Falta de profissionais qualificados</li>
@@ -383,7 +168,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Avanço Tecnológico</h3>
                     <ul>
                         <li>Capacidade de armazenamento e análise</li>
@@ -392,7 +177,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Orientação para o Cliente</h3>
                     <ul>
                         <li>Superar expectativas do cliente</li>
@@ -404,13 +189,13 @@
         </div>
 
         <div class="content-section" id="arquitetura">
-            <div class="summary-card">
-                <h2>Arquitetura para Big Data</h2>
+            <div class="discipline-card animate">
+                <h3>Arquitetura para Big Data</h3>
                 <p>A arquitetura de Big Data consiste em componentes e tecnologias projetados para armazenar, processar e analisar grandes volumes de dados de diferentes formatos e fontes.</p>
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Componentes Principais</h3>
                     <ul>
                         <li><strong>Hadoop</strong>: Plataforma para armazenamento e processamento distribuído</li>
@@ -421,7 +206,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Visão Funcional</h3>
                     <ul>
                         <li><strong>ETL de Big Data</strong>: Extração, transformação e carga de dados</li>
@@ -432,7 +217,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Tecnologias do Ecossistema</h3>
                     <ul>
                         <li>Apache Hadoop</li>
@@ -446,13 +231,13 @@
         </div>
 
         <div class="content-section" id="implementacao">
-            <div class="summary-card">
-                <h2>Implementação de Big Data</h2>
+            <div class="discipline-card animate">
+                <h3>Implementação de Big Data</h3>
                 <p>O sucesso na implementação de uma arquitetura Big Data depende de diversos fatores, desde a clareza do escopo até a escolha das tecnologias adequadas.</p>
             </div>
 
             <div class="concept-grid">
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Fatores de Sucesso</h3>
                     <ul>
                         <li>Clareza do escopo e objetivos</li>
@@ -462,7 +247,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-1">
                     <h3>Ambientes de Implantação</h3>
                     <ul>
                         <li>Data centers próprios</li>
@@ -472,7 +257,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Funcionalidades Principais</h3>
                     <ul>
                         <li>Cluster de Big Data (Armazenamento e Análise)</li>
@@ -482,7 +267,7 @@
                     </ul>
                 </div>
 
-                <div class="concept-card">
+                <div class="concept-card animate delay-2">
                     <h3>Considerações Finais</h3>
                     <ul>
                         <li>Big Data exige visão de negócio clara</li>
@@ -494,8 +279,8 @@
             </div>
         </div>
 
-        <div class="summary-card">
-            <h2>Próximos Passos para Aprendizado</h2>
+        <div class="discipline-card animate">
+            <h3>Próximos Passos para Aprendizado</h3>
             <p>Para consolidar seu conhecimento sobre Big Data, recomendo:</p>
             <ol>
                 <li>Entender profundamente os 5Vs e como se aplicam a casos reais</li>
@@ -508,58 +293,101 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>Resumo baseado no documento "Banco de Dados e Arquitetura para Big Data"</p>
-            <p>Desenvolvido para fins educacionais</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Curso</h3>
+                <p>O curso de Arquitetura de Software oferece uma formação completa e atualizada, preparando profissionais para os desafios do mercado de tecnologia.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 1234</p>
+                <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                <p><i class="fas fa-envelope"></i> contato@arqsoft.com.br</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="detalhes.html">Detalhes do Curso</a></li>
+                    <li><a href="bd.html">Big Data</a></li>
+                    <li><a href="#">Professores</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Curso de Arquitetura de Software. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="scripts/main.js"></script>
     <script>
-        // Navegação por abas
-        document.querySelectorAll('.nav-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remover classe active de todas as abas e seções
-                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-                
-                // Adicionar classe active à aba clicada
-                tab.classList.add('active');
-                
-                // Mostrar a seção correspondente
-                const targetId = tab.getAttribute('data-target');
-                document.getElementById(targetId).classList.add('active');
-            });
-        });
-
-        // Barra de progresso
-        window.addEventListener('scroll', () => {
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
-            
-            document.getElementById('progressBar').style.width = scrollPercent + '%';
-        });
-
-        // Marcar como concluído
-        document.getElementById('markCompleted').addEventListener('click', function() {
-            this.textContent = 'Estudo Concluído!';
-            this.classList.add('completed');
-            this.disabled = true;
-            
-            // Destacar visualmente as seções
-            document.querySelectorAll('.concept-card').forEach(card => {
-                card.style.boxShadow = '0 4px 12px rgba(39, 174, 96, 0.3)';
-                card.style.borderLeft = '5px solid #27ae60';
-            });
-            
-            alert('Parabéns! Você completou o estudo dos conceitos de Big Data!');
-        });
-
-        // Animação de carregamento inicial
+        // Script específico para a página de Big Data
         document.addEventListener('DOMContentLoaded', function() {
-            document.body.classList.add('loaded');
+            // Navegação por abas
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remover classe active de todas as abas e seções
+                    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                    
+                    // Adicionar classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostrar a seção correspondente
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Barra de progresso
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+                
+                document.getElementById('progressBar').style.width = scrollPercent + '%';
+            });
+
+            // Marcar como concluído
+            document.getElementById('markCompleted').addEventListener('click', function() {
+                this.textContent = 'Estudo Concluído!';
+                this.classList.add('completed');
+                this.disabled = true;
+                
+                // Destacar visualmente as seções
+                document.querySelectorAll('.concept-card').forEach(card => {
+                    card.style.boxShadow = '0 4px 12px rgba(39, 174, 96, 0.3)';
+                    card.style.borderLeft = '5px solid var(--success-color)';
+                });
+                
+                alert('Parabéns! Você completou o estudo dos conceitos de Big Data!');
+            });
+
+            // Animação de entrada dos elementos
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(function() {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
         });
     </script>
 </body>
