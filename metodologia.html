@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologia Científica - Arquitetura de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a página de Metodologia Científica */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #3498db;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid #3498db;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .etapas-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .etapa {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .etapa:hover {
+            transform: translateY(-5px);
+        }
+
+        .etapa h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .reference-list {
+            margin-bottom: 30px;
+        }
+
+        .reference-item {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item:nth-child(odd)::after, 
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-graphic"></div>
+        <div class="header-content">
+            <h1>Metodologia Científica</h1>
+            <p>Fundamentos da pesquisa científica e sua aplicação no contexto acadêmico e profissional</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="metodologia.html" class="active"><i class="fas fa-flask"></i> Metodologia</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="course-intro animate">
+            <h2>Metodologia Científica</h2>
+            <p>Esta apostila apresenta os fundamentos da metodologia científica e sua aplicação no contexto acadêmico, explorando princípios, técnicas e procedimentos para a realização de pesquisas. Desenvolvida para estudantes universitários, aborda como os métodos científicos influenciam tanto a produção de conhecimento quanto as práticas profissionais.</p>
+        </div>
+
+        <div class="content-tabs">
+            <div class="content-tab active" data-target="introducao">Introdução</div>
+            <div class="content-tab" data-target="tipos-pesquisa">Tipos de Pesquisa</div>
+            <div class="content-tab" data-target="etapas">Etapas da Pesquisa</div>
+            <div class="content-tab" data-target="trabalhos">Trabalhos Acadêmicos</div>
+            <div class="content-tab" data-target="normas">Normas ABNT</div>
+            <div class="content-tab" data-target="referencias">Referências</div>
+        </div>
+
+        <div class="content-section active" id="introducao">
+            <div class="discipline-card animate">
+                <h3>Introdução à Pesquisa Científica</h3>
+                <p>A pesquisa científica constitui um pilar fundamental na formação universitária, proporcionando as ferramentas necessárias para a produção de conhecimento acadêmico relevante. Ela capacita o estudante a investigar problemas de forma metódica, desenvolver soluções baseadas em evidências e contribuir com avanços significativos em sua área de estudo.</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card animate delay-1">
+                    <h3>Objetividade Metodológica</h3>
+                    <p>Dominar métodos científicos comprovados que garantam a confiabilidade e reprodutibilidade do seu trabalho, seja em pesquisas de campo, experimentos laboratoriais ou análises teóricas.</p>
+                    <ul>
+                        <li>Baseia-se em dados concretos e evidências</li>
+                        <li>Busca a neutralidade e imparcialidade</li>
+                        <li>Permite a replicação dos resultados</li>
+                        <li>Garante a validade das conclusões</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-1">
+                    <h3>Sistematização do Conhecimento</h3>
+                    <p>Estruturar seu trabalho em etapas claras e coerentes: definição do problema, revisão bibliográfica, coleta de dados, análise criteriosa e formulação de conclusões fundamentadas.</p>
+                    <ul>
+                        <li>Organização lógica do processo de pesquisa</li>
+                        <li>Sequência metodológica bem definida</li>
+                        <li>Planejamento e execução sistemáticos</li>
+                        <li>Documentação completa do processo</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-2">
+                    <h3>Rigor Científico</h3>
+                    <p>Produzir trabalhos com excelência acadêmica, fundamentados em fontes confiáveis e metodologias apropriadas, assegurando que suas conclusões reflitam a realidade dos dados coletados.</p>
+                    <ul>
+                        <li>Uso de fontes confiáveis e atualizadas</li>
+                        <li>Aplicação correta de métodos e técnicas</li>
+                        <li>Análise crítica dos resultados</li>
+                        <li>Reconhecimento das limitações do estudo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="tipos-pesquisa">
+            <div class="discipline-card animate">
+                <h3>Tipos de Pesquisa Científica</h3>
+                <p>A classificação das pesquisas científicas pode ser feita de acordo com diferentes critérios, como objetivos, procedimentos técnicos ou abordagem do problema. Conhecer esses tipos é fundamental para escolher a metodologia mais adequada ao objeto de estudo.</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card animate delay-1">
+                    <h3>Pesquisa Básica vs Aplicada</h3>
+                    <p>Distinção fundamental entre pesquisas que buscam avançar o conhecimento teórico e aquelas que visam resolver problemas práticos.</p>
+                    <ul>
+                        <li><strong>Pesquisa Básica:</strong> Gera conhecimento novo sem aplicação prática imediata</li>
+                        <li><strong>Pesquisa Aplicada:</strong> Busca soluções para problemas específicos</li>
+                        <li><strong>Pesquisa Experimental:</strong> Manipula variáveis para testar hipóteses</li>
+                        <li><strong>Pesquisa Descritiva:</strong> Descreve características de uma população ou fenômeno</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-1">
+                    <h3>Abordagem Qualitativa vs Quantitativa</h3>
+                    <p>Diferenças fundamentais entre pesquisas que focam na profundidade da compreensão e aquelas que buscam generalização estatística.</p>
+                    <ul>
+                        <li><strong>Qualitativa:</strong> Foca na compreensão de significados e experiências</li>
+                        <li><strong>Quantitativa:</strong> Utiliza dados numéricos e análise estatística</li>
+                        <li><strong>Mista:</strong> Combina ambas as abordagens</li>
+                        <li><strong>Estudo de Caso:</strong> Análise aprofundada de uma unidade específica</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-2">
+                    <h3>Métodos de Coleta de Dados</h3>
+                    <p>Técnicas e instrumentos utilizados para coletar informações relevantes para a pesquisa.</p>
+                    <ul>
+                        <li><strong>Questionários:</strong> Coleta padronizada de dados de muitos respondentes</li>
+                        <li><strong>Entrevistas:</strong> Obtenção de informações detalhadas através de diálogo</li>
+                        <li><strong>Observação:</strong> Registro sistemático de comportamentos e fenômenos</li>
+                        <li><strong>Análise Documental:</strong> Estudo de documentos e registros existentes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="etapas">
+            <div class="discipline-card animate">
+                <h3>Etapas da Pesquisa Científica</h3>
+                <p>O processo de pesquisa científica segue uma sequência lógica de etapas que garantem o rigor metodológico e a validade dos resultados. Conhecer e seguir essas etapas é fundamental para o sucesso de qualquer investigação científica.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item animate delay-1">
+                    <div class="timeline-content">
+                        <h3>Escolha do Tema e Problema</h3>
+                        <p>Definição clara do assunto a ser investigado e formulação do problema de pesquisa. O tema deve ser viável, relevante e original, enquanto o problema deve ser formulado como uma pergunta específica que orientará toda a investigação.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate delay-1">
+                    <div class="timeline-content">
+                        <h3>Revisão da Literatura</h3>
+                        <p>Levantamento e análise do conhecimento já produzido sobre o tema. Esta etapa permite contextualizar a pesquisa, evitar duplicação de esforços e identificar lacunas no conhecimento que justifiquem o estudo.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate delay-2">
+                    <div class="timeline-content">
+                        <h3>Definição da Metodologia</h3>
+                        <p>Seleção dos métodos, técnicas e instrumentos mais adequados para responder ao problema de pesquisa. Inclui a definição da população e amostra, instrumentos de coleta de dados e procedimentos de análise.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate delay-2">
+                    <div class="timeline-content">
+                        <h3>Coleta e Análise de Dados</h3>
+                        <p>Execução do planejamento metodológico mediante aplicação dos instrumentos de coleta e tratamento dos dados obtidos. Os dados são organizados, processados e analisados de acordo com a abordagem escolhida.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate delay-2">
+                    <div class="timeline-content">
+                        <h3>Redação e Apresentação</h3>
+                        <p>Comunicação dos resultados através de relatórios, artigos, dissertações ou teses. A redação deve seguir normas específicas e apresentar de forma clara e objetiva todo o processo de pesquisa e seus resultados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="trabalhos">
+            <div class="discipline-card animate">
+                <h3>Tipos de Trabalhos Acadêmicos</h3>
+                <p>A produção acadêmica se manifesta através de diferentes tipos de trabalhos, cada um com características, objetivos e exigências específicas. Conhecer essas modalidades é essencial para o estudante universitário.</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card animate delay-1">
+                    <h3>Artigo Científico</h3>
+                    <p>Formato conciso (10-15 páginas) que apresenta resultados de pesquisas originais. Segue estrutura padrão: introdução, método, resultados e discussão.</p>
+                    <ul>
+                        <li>Divulga resultados de pesquisas originais</li>
+                        <li>Passa por processo de revisão por pares</li>
+                        <li>Publicado em periódicos científicos</li>
+                        <li>Apresenta linguagem técnica e objetiva</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-1">
+                    <h3>Monografia/TCC</h3>
+                    <p>Trabalho de conclusão de curso que demonstra a capacidade de pesquisa e síntese do estudante. Desenvolvido sob orientação de professor.</p>
+                    <ul>
+                        <li>Exigência para obtenção do grau de bacharel</li>
+                        <li>Demonstra domínio do tema escolhido</li>
+                        <li>Apresenta estrutura acadêmica completa</li>
+                        <li>É defendido perante banca examinadora</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-2">
+                    <h3>Dissertação e Tese</h3>
+                    <p>Trabalhos de pós-graduação stricto sensu (mestrado e doutorado) que representam contribuições originais ao conhecimento.</p>
+                    <ul>
+                        <li>Dissertação (mestrado): aprofunda tema específico</li>
+                        <li>Tese (doutorado): contribuição original significativa</li>
+                        <li>Exigem rigor metodológico avançado</li>
+                        <li>Defendidos perante banca de especialistas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="normas">
+            <div class="discipline-card animate">
+                <h3>Normas ABNT para Trabalhos Acadêmicos</h3>
+                <p>A Associação Brasileira de Normas Técnicas (ABNT) estabelece padrões para a apresentação de trabalhos acadêmicos, garantindo uniformidade, clareza e credibilidade às produções científicas.</p>
+            </div>
+
+            <div class="concept-grid">
+                <div class="concept-card animate delay-1">
+                    <h3>Estrutura do Trabalho</h3>
+                    <p>Elementos pré-textuais, textuais e pós-textuais que compõem um trabalho acadêmico conforme as normas ABNT.</p>
+                    <ul>
+                        <li><strong>Pré-textuais:</strong> Capa, folha de rosto, sumário, resumo</li>
+                        <li><strong>Textuais:</strong> Introdução, desenvolvimento, conclusão</li>
+                        <li><strong>Pós-textuais:</strong> Referências, anexos, apêndices</li>
+                        <li><strong>Formatação:</strong> Margens, fonte, espaçamento, numeração</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-1">
+                    <h3>Citações e Referências</h3>
+                    <p>Normas para apresentação de citações diretas, indiretas e referências bibliográficas, garantindo o reconhecimento adequado das fontes utilizadas.</p>
+                    <ul>
+                        <li><strong>Citação direta:</strong> Transcrição textual com indicação da página</li>
+                        <li><strong>Citação indireta:</strong> Paráfrase das ideias do autor</li>
+                        <li><strong>Sistema autor-data:</strong> Formato padrão para citações</li>
+                        <li><strong>Referências:</strong> Lista completa das obras citadas</li>
+                    </ul>
+                </div>
+
+                <div class="concept-card animate delay-2">
+                    <h3>Formatação Técnica</h3>
+                    <p>Especificações técnicas para a apresentação gráfica dos trabalhos acadêmicos, incluindo aspectos visuais e editoriais.</p>
+                    <ul>
+                        <li><strong>Papel:</strong> A4, cor branca</li>
+                        <li><strong>Fonte:</strong> Times New Roman ou Arial, tamanho 12</li>
+                        <li><strong>Espaçamento:</strong> 1,5 entre linhas no texto principal</li>
+                        <li><strong>Margens:</strong> 3 cm (esquerda e superior), 2 cm (direita e inferior)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="referencias">
+            <div class="discipline-card animate">
+                <h3>Referências Bibliográficas</h3>
+                <p>O estudo da metodologia científica conta com uma vasta literatura que abrange desde manuais básicos até obras especializadas em métodos de pesquisa.</p>
+            </div>
+
+            <div class="reference-list animate delay-1">
+                <h3>Obras Fundamentais</h3>
+                <div class="reference-item">ANDRADE, M. M. Introdução à Metodologia do Trabalho Científico: Elaboração de Trabalhos de Conclusão de Curso e Monografias. 10. ed. São Paulo: Atlas, 2017.</div>
+                <div class="reference-item">ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. NBR 6023: Informação e documentação - Referências - Elaboração. Rio de Janeiro: ABNT, 2002.</div>
+                <div class="reference-item">SEVERINO, A. J. Metodologia do Trabalho Científico. 23. ed. São Paulo: Cortez, 2007.</div>
+                <div class="reference-item">GIL, A. C. Como Elaborar Projetos de Pesquisa: Métodos e Técnicas de Pesquisa Social. 6. ed. São Paulo: Atlas, 2019.</div>
+                <div class="reference-item">LAKATOS, E. M.; MARCONI, M. A. Fundamentos de Metodologia Científica. 7. ed. São Paulo: Atlas, 2017.</div>
+            </div>
+
+            <div class="reference-list animate delay-2">
+                <h3>Leitura Complementar</h3>
+                <div class="reference-item">MINAYO, M. C. S. Pesquisa Social: Teoria, Método e Criatividade. 32. ed. Petrópolis: Vozes, 2017.</div>
+                <div class="reference-item">FACHIN, O. Fundamentos de Metodologia. 5. ed. São Paulo: Editora da Universidade de São Paulo, 2005.</div>
+                <div class="reference-item">PEREIRA, A. F. Metodologia da Pesquisa: Uma Abordagem Prática. 2. ed. Rio de Janeiro: LTC, 2017.</div>
+                <div class="reference-item">RICHARDSON, R. J. Pesquisa Social: Métodos e Técnicas. 3. ed. São Paulo: Atlas, 2012.</div>
+            </div>
+        </div>
+
+        <div class="discipline-card animate">
+            <h3>Próximos Passos para Aprendizado</h3>
+            <p>Para consolidar seu conhecimento sobre Metodologia Científica, recomendo:</p>
+            <ol>
+                <li>Estudar as principais técnicas de pesquisa e suas aplicações</li>
+                <li>Praticar a elaboração de projetos de pesquisa</li>
+                <li>Desenvolver habilidades de redação acadêmica</li>
+                <li>Aprender a usar ferramentas de gestão de referências</li>
+                <li>Participar de grupos de pesquisa e iniciação científica</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Curso</h3>
+                <p>O curso de Arquitetura de Software oferece uma formação completa e atualizada, preparando profissionais para os desafios do mercado de tecnologia.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 1234</p>
+                <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                <p><i class="fas fa-envelope"></i> contato@arqsoft.com.br</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="detalhes.html">Detalhes do Curso</a></li>
+                    <li><a href="bd.html">Big Data</a></li>
+                    <li><a href="etica.html">Ética</a></li>
+                    <li><a href="metodologia.html">Metodologia</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Curso de Arquitetura de Software. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Script específico para a página de Metodologia Científica
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegação por abas
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remover classe active de todas as abas e seções
+                    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                    
+                    // Adicionar classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostrar a seção correspondente
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Animação de entrada dos elementos
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(function() {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
