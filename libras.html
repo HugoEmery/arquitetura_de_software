@@ -4,102 +4,181 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Língua Brasileira de Sinais (LIBRAS)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f9f9f9;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
             color: #333;
+            line-height: 1.6;
         }
+        
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #0066cc;
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
             text-align: center;
-            border-bottom: 2px solid #0066cc;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
         h2 {
-            color: #0066cc;
-            border-left: 4px solid #0066cc;
-            padding-left: 10px;
-            margin-top: 30px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
+        
         h3 {
-            color: #444;
+            color: #2980b9;
+            margin: 15px 0 10px;
         }
-        .page {
-            page-break-before: always;
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
         }
+        
         ul {
-            padding-left: 20px;
+            margin-left: 30px;
+            margin-bottom: 20px;
         }
+        
         li {
             margin-bottom: 8px;
         }
-        .alphabet {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #fff8e1;
+            padding: 15px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #555;
+            border-left: 3px solid #3498db;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        .references {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .alphabet, .numbers {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
             margin: 20px 0;
         }
-        .letter {
+        
+        .letter, .number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        footer {
             text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f0f8ff;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #2c3e50;
+            color: white;
         }
-        .numbers {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-            margin: 20px 0;
-        }
-        .number {
-            text-align: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background-color: #f0f8ff;
-        }
-        .reference {
-            font-size: 0.9em;
-            margin-bottom: 5px;
-            padding-left: 20px;
-            text-indent: -20px;
-        }
-        .checkbox {
-            margin-right: 8px;
-        }
-        @media print {
-            body {
-                background: white;
+        
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 20px;
             }
-            .container {
-                box-shadow: none;
-                padding: 0;
-            }
-            .page {
-                page-break-before: always;
-                padding-top: 20px;
+            
+            header h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Língua Brasileira de Sinais (LIBRAS)</h1>
+    <header>
+        <div class="container">
+            <h1>Língua Brasileira de Sinais (LIBRAS)</h1>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html" class="active"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="page">
+    <div class="container">
+        <section class="content-section">
             <h2>Sumário</h2>
             <ul>
                 <li>Língua Brasileira de Sinais (Libras)
@@ -179,14 +258,14 @@
                 <li>Leitura Complementar</li>
                 <li>Referências Bibliográficas</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Língua Brasileira de Sinais</h2>
             <p>A Língua Brasileira de Sinais (Libras) é uma língua de sinais completa e natural, reconhecida como a língua oficial da comunidade surda no Brasil. Essa apostila tem como objetivo fornecer uma base sólida para o estudo da Libras, explorando seus fundamentos, estrutura, aspectos culturais, aplicações e relevância na sociedade brasileira. Através do estudo da Libras, você poderá se conectar com a rica cultura surda e desenvolver a habilidade de se comunicar com surdos de forma respeitosa, compreensiva e inclusiva.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Introdução à Libras</h2>
             <p>A Língua Brasileira de Sinais (Libras) é a língua natural da comunidade surda brasileira, reconhecida legalmente como meio de comunicação e expressão. Como qualquer língua, a Libras possui estrutura gramatical própria, com regras de fonologia, morfologia, sintaxe e semântica que a diferenciam da Língua Portuguesa. É um sistema de comunicação visual-espacial, utilizando gestos, expressões faciais, movimentos corporais e configurações de mãos para transmitir ideias, informações e emoções.</p>
             
@@ -195,9 +274,9 @@
             <p>Compreender a Libras é fundamental para construir uma sociedade mais justa e inclusiva, reconhecendo a riqueza cultural e a diversidade linguística do Brasil. O estudo da Libras permite aos profissionais de diferentes áreas, como educação, saúde, direito e assistência social, desenvolverem habilidades para atender às necessidades da comunidade surda.</p>
             
             <p>Esta apostila tem como objetivo apresentar os fundamentos da Libras, a cultura surda e a legislação que garante os direitos linguísticos das pessoas surdas. Abordaremos também a importância da inclusão educacional, as profissões relacionadas à Libras, como a interpretação, e os desafios e perspectivas para o futuro da língua de sinais no Brasil.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Fundamentos da Libras</h2>
             <p>A Língua Brasileira de Sinais (Libras) é uma língua natural e completa, com estrutura gramatical própria e rica, que se desenvolveu históricamente na comunidade surda brasileira. Compreender os fundamentos da Libras é essencial para a comunicação eficaz e inclusiva com a comunidade surda.</p>
             
@@ -209,13 +288,13 @@
                 <li>O conhecimento dos fundamentos da Libras é crucial para a criação de um ambiente inclusivo e acessível para a comunidade surda, promovendo a comunicação e o desenvolvimento social.</li>
                 <li>O aprendizado da Libras contribui para a construção de uma sociedade mais justa e igualitária, reconhecendo e valorizando a diversidade linguística e cultural.</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Estrutura Gramatical da Libras</h2>
             <p>A Língua Brasileira de Sinais (Libras) possui uma estrutura gramatical própria, distinta da língua portuguesa. A organização gramatical da Libras é baseada em elementos visuais e espaciais, diferindo significativamente da gramática das línguas orais.</p>
             
-            <p>A Libras utiliza elementos visuais, como a configuração de mão, o movimento e a localização no espaço, para formar as palavras. A configuração de mão refere-se à forma que a mão assume durante a sinalização. O movimento indica a ação ou a qualidade do sinal. A localização no espaço define o contexto e as relações gramaticais entre os sinais.</p>
+            <p>A Libras utiliza elementos visuais, como a configuração de mão, o movimento e a localização no espaço, para formar as palavras. A configuração de mão refere-se à forma que a mão assume durante a sinalização. O movimento indica a ação ou a qualidade do sinal. A localização no espaço defines o contexto e as relações gramaticais entre os sinais.</p>
             
             <p>Na Libras, a ordem dos sinais pode variar, dependendo da intenção do falante. A ordem dos sinais pode ser sujeito-verbo-objeto, objeto-verbo-sujeito ou verbo-sujeito-objeto. A Libras utiliza marcadores espaciais para indicar a relação entre os sinais, como a direção do olhar e a localização no espaço.</p>
             
@@ -224,9 +303,9 @@
             <p>A Libras utiliza elementos pragmáticos, como expressões faciais, gestos e movimentos do corpo, para complementar o significado dos sinais. Esses elementos ajudam a transmitir informações como emoções, intenções e relações sociais.</p>
             
             <p>A estrutura gramatical da Libras é rica e complexa, demonstrando a capacidade da língua de sinais de expressar ideias e pensamentos de forma eficaz. O estudo da gramática da Libras é essencial para a compreensão e a comunicação fluente com pessoas surdas.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Aspectos Gramaticais da Libras</h2>
             <p>A Libras, como qualquer língua natural, possui uma estrutura gramatical própria, distinta da língua portuguesa. Compreender essa estrutura é fundamental para a fluência na Libras e para a comunicação eficaz com a comunidade surda. A gramática da Libras se baseia em elementos visuais e espaciais, com elementos morfológicos, sintáticos e semânticos que se combinam para criar significado.</p>
             
@@ -238,9 +317,9 @@
             <p>Por exemplo, a ordem dos sinais em uma frase pode indicar quem é o sujeito e quem é o objeto, e as expressões faciais podem indicar o tempo verbal e a intenção do falante. Além disso, a Libras possui uma variedade de recursos gramaticais, como a incorporação e a movimentação, que não existem na língua portuguesa.</p>
             
             <p>O estudo da gramática da Libras é essencial para que falantes de línguas orais compreendam como a língua de sinais funciona e para que a comunicação com a comunidade surda seja mais fluida e eficaz. A compreensão dos elementos gramaticais, como a incorporação, a repetição e a movimentação, permite que os indivíduos se expressem de forma mais completa e precisa na Libras.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Modalidade Visual-Espacial da Libras</h2>
             <p>A Libras, como uma língua natural, utiliza um sistema de comunicação visual-espacial. Essa modalidade singular distingue a Libras de outras formas de comunicação, tornando-a uma língua rica e complexa. A modalidade visual-espacial engloba a utilização de elementos visuais e espaciais para a construção de significados.</p>
             
@@ -254,9 +333,9 @@
             </ul>
             
             <p>A Libras se diferencia de línguas orais, que dependem da audição. A visualização e a interpretação dos sinais são essenciais para a compreensão da língua. Essa modalidade visual-espacial permite que a Libras seja uma língua rica e expressiva, capaz de transmitir mensagens complexas e nuances de significado.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>História da Língua de Sinais no Brasil</h2>
             <p>A história da Língua Brasileira de Sinais (Libras) no Brasil está intrinsecamente ligada à história da comunidade surda e aos esforços contínuos para a inclusão e reconhecimento da comunidade surda. A Libras, como a conhecemos hoje, tem suas raízes no século XIX, com a chegada de surdos estrangeiros ao Brasil e a formação das primeiras escolas para surdos, inicialmente baseadas no método francês.</p>
             
@@ -267,9 +346,9 @@
             <p>Nos anos 80 e 90, movimentos surdos ganharam força, reivindicando o reconhecimento da Libras como língua oficial e a inclusão da comunidade surda na sociedade. Em 2002, a Lei 10.436 finalmente reconheceu a Libras como língua oficial do Brasil, garantindo direitos linguísticos e culturais à comunidade surda. Esse marco histórico foi crucial para o desenvolvimento da Libras, abrindo portas para o ensino, a pesquisa, a tradução e a interpretação da língua.</p>
             
             <p>Atualmente, a Libras é reconhecida como patrimônio cultural e linguístico do Brasil, e o país conta com uma comunidade surda engajada na proteção e desenvolvimento da língua. As universidades, escolas e instituições públicas estão cada vez mais investindo em programas de ensino, pesquisa e formação de profissionais em Libras, contribuindo para a inclusão e o acesso à educação para surdos.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Identidade e Cultura Surda</h2>
             <p>A cultura surda é um universo rico e complexo, moldado por uma história singular e valores próprios. A identidade surda transcende a deficiência auditiva, englobando uma visão de mundo, valores, costumes e práticas sociais específicas. A experiência da surdez e a comunicação em Libras são elementos centrais na construção da identidade surda, moldando a forma como os surdos se relacionam com o mundo e com outros surdos.</p>
             
@@ -284,15 +363,15 @@
             </ul>
             
             <p>Compreender a cultura surda é crucial para promover a inclusão social de pessoas surdas e garantir seus direitos linguísticos, culturais e sociais. A valorização da cultura surda e a integração da comunidade surda na sociedade são pilares para uma sociedade mais justa e igualitária.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Comunidade Surda e Cultura Surda</h2>
             <p>A comunidade surda possui uma cultura e identidade próprias, construídas a partir de valores, costumes e práticas compartilhados. Essa cultura se expressa por meio da língua de sinais, arte, literatura e música, moldando a forma como os surdos se conectam com o mundo e consigo mesmos.</p>
             
             <p>A cultura surda transcende a perda auditiva, representando a construção de uma identidade única, com suas próprias regras, valores e formas de interação. A comunidade surda não é homogênea, abrangendo diferentes experiências, identidades e perspectivas. Las pessoas surdas têm diferentes níveis de perda auditiva, histórias familiares e experiências com a comunidade surda, o que enriquece a diversidade cultural do grupo.</p>
             
-            <p>A comunidade surda é fundamental para la preservação e desenvolvimento da cultura surda. Dentro dela, as pessoas surdas se conectam, compartilham experiências, aprendem a língua de sinais e desenvolvem sua identidade. Esse espaço oferece segurança, apoio e reconhecimento, contribuindo para a inclusão das pessoas surdas e o desenvolvimento da cultura surda em todas as suas formas.</p>
+            <p>A comunidade surda é fundamental para la preservação e desenvolvimento da cultura surda. Dentro dela, as pessoas surdas se conectam, compartilham experiencias, aprendem a língua de sinais e desenvolvem sua identidade. Esse espaço oferece segurança, apoio e reconhecimento, contribuindo para a inclusão das pessoas surdas e o desenvolvimento da cultura surda em todas as suas formas.</p>
             
             <p>A cultura surda se manifesta em diversas formas, incluindo:</p>
             
@@ -303,9 +382,9 @@
             <p>A arte surda é rica e diversa, incluindo pintura, escultura, fotografia, dança, teatro e música. Os artistas surdos exploram temas e formas de expressão que refletem suas experiências, valores e perspectivas, promovendo a inclusão e o reconhecimento da cultura surda.</p>
             
             <p>A comunidade surda é rica e complexa, com uma cultura vibrante e em constante desenvolvimento. A língua de sinais, a arte e a história da comunidade surda são importantes para a identidade surda. Reconhecer a cultura surda como autônoma e diversa é fundamental para la inclusão social e os direitos das pessoas surdas.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Entendendo a Surdez</h2>
             <p>A surdez é uma condição que afeta a capacidade auditiva, podendo variar em graus de leve a profunda. É importante entender que a surdez não é uma doença, mas sim uma deficiência que pode ter diversas causas, desde fatores genéticos até doenças e traumas. É fundamental reconhecer que la surdez, apesar de um aspecto biológico, se manifesta também em aspectos socioculturais, impactando a vida do indivíduo surdo em diversos âmbitos.</p>
             
@@ -314,9 +393,9 @@
             <p>A deficiência auditiva se manifesta de diferentes formas, com diferentes níveis de perda auditiva, como condutiva, neurosensorial e mista. A surdez condutiva acontece quando há uma obstrução no canal auditivo externo ou na orelha média, impedindo a condução do som até a orelha interna. Na surdez neurosensorial, os danos na cóclea ou no nervo auditivo prejudicam a percepção dos sons. A surdez mista combina características de ambos os tipos.</p>
             
             <p>É importante destacar que a surdez não é uma condição homogênea. Existem diferentes graus de perda auditiva, tipos de surdez e experiências individuais, o que demanda uma abordagem inclusiva e respeitosa às necessidades e particularidades de cada pessoa surda. A compreensão dos aspectos biológicos da surdez é fundamental para o desenvolvimento de estratégias de intervenção e reabilitação adequadas, além de promover a inclusão e o acesso à comunicação e à informação.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Surdez: Um Olhar sobre os Aspectos Biológicos</h2>
             <p>A surdez, como condição biológica, engloba uma variedade de graus e tipos de perda auditiva, impactando a capacidade de percepção sonora. Essa perda pode ser classificada em diferentes categorias, levando em consideração a gravidade, o tipo, a causa e a localização da perda auditiva.</p>
             
@@ -330,11 +409,11 @@
             <p>É crucial entender que a surdez não é uma condição homogénea, e cada indivíduo apresenta um perfil auditivo único. As causas da perda auditiva são diversas, impactando diferentes partes do sistema auditivo. As implicações da perda auditiva variam de acordo com a gravidade e o tipo da perda, afetando a vida social, educacional, profissional e emocional do indivíduo.</p>
             
             <p>Compreender os aspectos biológicos da surdez é fundamental para o desenvolvimento de estratégias de reabilitação auditiva eficazes, bem como para a promoção da inclusão social de pessoas surdas. A tecnologia e os recursos de acessibilidade, como aparelhos auditivos e implantes cocleares, desempenham um papel crucial na reabilitação auditiva e na qualidade de vida das pessoas surdas.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Surdez e aspectos socioculturais</h2>
-            <p>A surdez, além de uma condição biológica, possui uma dimensão sociocultural significativa que molda a experiência e a identidade das pessoas surdas. A cultura surda, com suas próprias normas, valores, linguagem e práticas, cria um espaço único e rico para a comunidade surda.</p>
+            <p>A surdez, além de uma condição biológica, possui uma dimensão sociocultural significativa que molda a experiência e a identidade das pessoas surdas. A cultura surda, com suas próprias normas, valores, linguagem e práticas, cria um espaço único e rico para la comunidad surda.</p>
             
             <ul>
                 <li><strong>A língua de sinais</strong> é o principal elemento da cultura surda. Ela não é apenas um meio de comunicação, mas também um sistema simbólico que expressa a identidade, a história e os valores da comunidade surda.</li>
@@ -343,10 +422,10 @@
                 <li>A <strong>identidade surda</strong> é construída a partir da experiência de ser surdo em uma sociedade ouvinte. Essa experiência inclui desafios e conquistas, e a cultura surda oferece um sistema de apoio e pertencimento.</li>
             </ul>
             
-            <p>Compreender os aspectos socioculturais da surdez é fundamental para promover a inclusão e o respeito à diversidade na sociedade. A valorização da cultura surda e a garantia do acesso à língua de sinais são essenciais para que as pessoas surdas possam ter acesso à educação, ao trabalho, à saúde e à participação social plena.</p>
-        </div>
+            <p>Compreender os aspectos socioculturais da surdez é fundamental para promover la inclusão e o respeito à diversidade na sociedade. A valorização da cultura surda e a garantia do acesso à língua de sinais são essenciais para que as pessoas surdas possam ter acesso à educação, ao trabalho, à saúde e à participação social plena.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>A comunidade surda no Brasil</h2>
             <p>A comunidade surda brasileira é um grupo diverso e vibrante com uma história e cultura ricas. Ao longo dos anos, os surdos brasileiros lutaram por seus direitos linguísticos, educacionais e sociais, buscando reconhecimento e inclusão na sociedade.</p>
             
@@ -356,10 +435,10 @@
             
             <p><strong>Os esforços da comunidade surda</strong> tem sido fundamental na construção de uma sociedade mais inclusiva e justa, promovendo o acesso à educação, saúde, trabalho e outras áreas. Essa luta por direitos, a busca por igualdade e a valorização da cultura surda continuam sendo prioridades para la comunidad, garantindo a plena participação dos surdos na sociedade.</p>
             
-            <p>A inclusão da comunidade surda é uma jornada que exige a participação ativa de toda a sociedade. A compreensão da importância da acessibilidade, da comunicação em Libras e da valorização da cultura surda é essencial para que a comunidade surda tenha acesso a oportunidades iguais de desenvolvimento e participação social. Em suma, a comunidade surda no Brasil é um exemplo inspirador de resiliência e luta por direitos, contribuindo para a construção de uma sociedade mais justa e inclusiva.</p>
-        </div>
+            <p>A inclusão da comunidade surda é uma jornada que exige a participação ativa de toda a sociedade. A compreensão da importância da acessibilidade, da comunicação em Libras e da valorização da cultura surda é essencial para que a comunidade surda tenha acesso a oportunidades iguais de desenvolvimento e participação social. Em suma, a comunidade surda no Brasil é um exemplo inspirador de resiliência e luta por direitos, contribuindo para la construcción de uma sociedade mais justa e inclusiva.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Surdez e Cultura: Uma Perspectiva Social</h2>
             <p>A surdez é muito mais do que a perda auditiva. Ela se conecta profundamente com a vida social e cultural das pessoas. Ser surdo vai além de uma deficiência, moldando quem a pessoa é, como se comunica, como aprende e como participa da sociedade. Para criar um mundo inclusivo e respeitoso, precisamos entender a surdez como um fenômeno sociocultural.</p>
             
@@ -367,12 +446,12 @@
             
             <p>A comunidade surda tem uma cultura rica e vibrante, com sua própria linguagem de sinais, valores e tradições. A Libras (Língua Brasileira de Sinais) é la principal forma de comunicação e a base da identidade dessa comunidade. A cultura surda se expressa em suas artes, música, literatura e dança, mostrando a vivência e a perspectiva única de pessoas que se comunicam por meio da linguagem visual.</p>
             
-            <p>Para construir uma sociedade justa e inclusiva, precisamos entender os aspectos socioculturais da surdez. Valorizar a cultura surda, garantir a acessibilidade em Libras, promover a educação bilíngue e defender os direitos dos surdos são passos essenciais para que eles participem plenamente da sociedade. Reconhecer a surdez como uma experiência singular e valorizar a cultura surda são passos importantes para criar um mundo mais inclusivo e igualitário.</p>
+            <p>Para construir uma sociedade justa e inclusiva, precisamos entender os aspectos socioculturais da surdez. Valorizar a cultura surda, garantir a acessibilidade em Libras, promover a educação bilíngue e defender os direitos dos surdos são passos essenciais para que eles participem plenamente da sociedade. Reconhecer la surdez como uma experiência singular e valorizar a cultura surda são passos importantes para criar um mundo mais inclusivo e igualitário.</p>
             
             <p>Em suma, a construção de um mundo que reconheça a surdez como uma experiência sociocultural rica e vibrante é crucial para a plena inclusão e participação dos surdos. Através da valorização da cultura surda, do acesso à Libras e da promoção de políticas públicas que garantam seus direitos, podemos criar uma sociedade mais justa e igualitária para todos.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>O Ensino da Libras na Educação</h2>
             
             <h3>1 Acesso à informação e à cultura</h3>
@@ -387,18 +466,18 @@
             <p>A implementação do ensino da Libras na educação exige a capacitação de professores e profissionais da educação, com a formação adequada em Libras e metodologias de ensino inclusivas. A criação de materiais didáticos e recursos pedagógicos específicos para o ensino da Libras também é crucial para o sucesso da inclusão educacional de surdos.</p>
             
             <ul>
-                <li><input type="checkbox" class="checkbox"> Aulas de Libras como disciplina curricular obrigatória em escolas regulares e IES</li>
-                <li><input type="checkbox" class="checkbox"> Formação de professores em Libras e metodologias inclusivas</li>
-                <li><input type="checkbox" class="checkbox"> Recursos pedagógicos específicos para o ensino da Libras, como livros, softwares e vídeos</li>
-                <li><input type="checkbox" class="checkbox"> Acessibilidade em materiais didáticos e avaliações, com tradução em Libras e legendas</li>
-                <li><input type="checkbox" class="checkbox"> Integração de alunos surdos e ouvintes em atividades escolares e projetos conjuntos</li>
-                <li><input type="checkbox" class="checkbox"> Participação de intérpretes de Libras em sala de aula e eventos escolares</li>
+                <li>Aulas de Libras como disciplina curricular obrigatória em escolas regulares e IES</li>
+                <li>Formação de professores em Libras e metodologias inclusivas</li>
+                <li>Recursos pedagógicos específicos para o ensino da Libras, como livros, softwares e vídeos</li>
+                <li>Acessibilidade em materiais didáticos e avaliações, com tradução em Libras e legendas</li>
+                <li>Integração de alunos surdos e ouvintes em atividades escolares e projetos conjuntos</li>
+                <li>Participação de intérpretes de Libras em sala de aula e eventos escolares</li>
             </ul>
             
             <p>O ensino da Libras na educação é um passo fundamental para a construção de uma sociedade mais justa e inclusiva, garantindo o direito à educação e à participação social plena para pessoas surdas. A implementação de políticas públicas e programas educacionais que promovam o ensino da Libras é essencial para a inclusão educacional e social da comunidade surda.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Legislação Brasileira sobre a Libras</h2>
             <p>A legislação brasileira tem avançado significativamente no reconhecimento e proteção dos direitos linguísticos das pessoas surdas. A Libras, como língua oficial da comunidade surda brasileira, é amparada por leis e decretos que garantem seu uso e difusão em diferentes contextos sociais.</p>
             
@@ -418,9 +497,9 @@
             <p>Além das leis, políticas públicas em níveis federal, estadual e municipal têm sido implementadas para promover a inclusão de surdos, como programas de formação em Libras, acessibilidade em serviços públicos e incentivo à pesquisa e desenvolvimento de tecnologias assistivas.</p>
             
             <p>A legislação brasileira sobre a Libras representa um marco importante na garantia dos direitos linguísticos e na promoção da inclusão social de pessoas surdas. No entanto, a implementação efetiva dessas leis ainda enfrenta desafios, exigindo o engajamento contínuo da sociedade e do poder público para garantir que os direitos das pessoas surdas sejam respeitados e efetivados.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Direitos Linguísticos das Pessoas Surdas</h2>
             <p>As pessoas surdas têm o direito de usar sua língua natural, a Libras, em todos os aspectos da vida social. Esse direito é garantido por leis e políticas públicas que visam promover a inclusão e a acessibilidade.</p>
             
@@ -444,9 +523,9 @@
             </ul>
             
             <p>Garantir os direitos linguísticos das pessoas surdas é fundamental para a construção de uma sociedade mais justa e inclusiva. A implementação de políticas públicas e a conscientização da sociedade são essenciais para que esses direitos sejam efetivados.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Educação Bilíngue para Surdos</h2>
             <p>A educação bilíngue para surdos é um modelo educacional que reconhece a Libras como a primeira língua (L1) e o Português como a segunda língua (L2) dos alunos surdos. Esse modelo visa garantir o acesso à educação de qualidade, respeitando a identidade linguística e cultural da comunidade surda.</p>
             
@@ -465,9 +544,9 @@
             <p>A implementação da educação bilíngue exige a formação de professores bilíngues, a criação de materiais didáticos específicos e a adaptação do currículo escolar. Além disso, é necessário garantir a presença de intérpretes de Libras e outros recursos de acessibilidade para promover um ambiente educacional inclusivo.</p>
             
             <p>A educação bilíngue é um direito garantido por lei (Lei nº 10.436/2002 e Decreto nº 5.626/2005) e representa um avanço significativo na inclusão educacional de surdos. No entanto, ainda existem desafios na implementação desse modelo, como a falta de recursos, a carência de profissionais qualificados e a necessidade de maior conscientização sobre a importância da Libras na educação.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Desafios e Perspectivas da Interpretação em Libras</h2>
             <p>A interpretação em Libras é uma atividade complexa que exige não apenas o domínio da língua, mas também conhecimentos culturais, técnicos e éticos. Os intérpretes de Libras enfrentam diversos desafios em sua atuação, desde a falta de reconhecimento profissional até a necessidade de constante atualização.</p>
             
@@ -481,14 +560,14 @@
                 <li><strong>Falta de acessibilidade:</strong> Muitos espaços ainda não são acessíveis para surdos e intérpretes.</li>
             </ul>
             
-            <p>Apesar dos desafios, há perspectivas positivas para a interpretação em Libras. O reconhecimento legal da profissão, a crescente demanda por intérpretes e o desenvolvimento de tecnologias assistivas são fatores que impulsionam a área. Além disso, a valorização da diversidade e da inclusão social tem aumentado a conscientização sobre a importância da interpretação em Libras.</p>
+            <p>Apesar dos desafios, há perspectivas positivas para la interpretação em Libras. O reconhecimento legal da profissão, a crescente demanda por intérpretes e o desenvolvimento de tecnologias assistivas são fatores que impulsionam a área. Além disso, a valorização da diversidade e da inclusão social tem aumentado a conscientização sobre a importância da interpretação em Libras.</p>
             
             <p>Para superar os desafios e aproveitar as perspectivas, é necessário investir na formação de intérpretes, na valorização profissional e na criação de políticas públicas que garantam a acessibilidade em todos os espaços. A interpretação em Libras é essencial para a inclusão social de surdos e deve ser tratada com a seriedade e o respeito que merece.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Profissão de Intérprete de Libras</h2>
-            <p>A profissão de Intérprete de Libras é fundamental para a inclusão social de pessoas surdas, garantindo o acesso à informação, educação, saúde, trabalho e outros serviços. O intérprete atua como ponte de comunicação entre surdos e ouvintes, traduzindo a Língua Portuguesa para a Libras e vice-versa.</p>
+            <p>A profissão de Intérprete de Libras é fundamental para a inclusão social de pessoas surdas, garantindo o acesso à informação, educação, saúde, trabalho e outros serviços. O intérprete atua como ponte de communication entre surdos e ouvintes, traduzindo a Língua Portuguesa para a Libras e vice-versa.</p>
             
             <p>Para exercer a profissão, é necessário ter formação específica em Libras e interpretação, além de conhecimentos culturais e éticos. O intérprete deve dominar não apenas a língua, mas também as nuances culturais da comunidade surda, garantindo uma comunicação fiel e respeitosa.</p>
             
@@ -502,16 +581,16 @@
                 <li><strong>Mídia:</strong> Trabalhando em programas de TV, vídeos e transmissões ao vivo.</li>
             </ul>
             
-            <p>A profissão de intérprete de Libras é regulamentada pela Lei nº 12.319/2010, que estabelece os requisitos para a formação e atuação profissional. A lei garante direitos trabalhistas e reconhecimento profissional, valorizando o trabalho dos intérpretes e promovendo a inclusão social de surdos.</p>
+            <p>A profissão de intérprete de Libras é regulamentada pela Lei nº 12.319/2010, que estabelece os requisitos para a formação e atuação profissional. A lei garante direitos trabalhistas e reconhecimento profissional, valorizando o trabalho dos intérpretes e promovendo la inclusão social de surdos.</p>
             
-            <p>Ser intérprete de Libras é uma profissão desafiadora e gratificante, que exige dedicação, empatia e constante atualização. Os intérpretes são agentes de transformação social, contribuindo para a construção de uma sociedade mais justa e inclusiva.</p>
-        </div>
+            <p>Ser intérprete de Libras é uma profissão desafiadora e gratificante, que exige dedicação, empatia e constante atualização. Os intérpretes são agentes de transformação social, contribuindo para la construcción de uma sociedade mais justa e inclusiva.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Código de Ética do Intérprete de Libras</h2>
-            <p>O Código de Ética do Intérprete de Libras é um conjunto de princípios e normas que orientam a conduta profissional dos intérpretes, garantindo a qualidade e a integridade do serviço prestado. Esses princípios são essenciais para manter a confiança entre o intérprete, a pessoa surda e a comunidade ouvinte.</p>
+            <p>O Código de Ética do Intérprete de Libras é um conjunto de principios e normas que orientam a conduta profissional dos intérpretes, garantindo a qualidade e a integridade do serviço prestado. Esses principios são essenciais para manter a confiança entre o intérprete, a pessoa surda e a comunidade ouvinte.</p>
             
-            <p>Os principais princípios éticos incluem:</p>
+            <p>Os principais principios éticos incluem:</p>
             
             <ul>
                 <li><strong>Confidencialidade:</strong> O intérprete deve manter sigilo sobre todas as informações confidenciais a que tiver acesso durante a interpretação.</li>
@@ -522,12 +601,12 @@
                 <li><strong>Responsabilidade:</strong> O intérprete deve assumir a responsabilidade por seus atos e omissões no exercício da profissão.</li>
             </ul>
             
-            <p>O Código de Ética também estabelece diretrizes para situações específicas, como conflitos de interesse, publicidade profissional e relações com outros intérpretes. Seguir esses princípios é fundamental para a credibilidade e o reconhecimento da profissão, além de garantir um serviço de qualidade para a comunidade surda.</p>
+            <p>O Código de Ética também estabelece diretrizes para situações específicas, como conflitos de interesse, publicidade profissional e relações com outros intérpretes. Seguir esses principios é fundamental para a credibilidade e o reconhecimento da profissão, além de garantir um serviço de qualidade para a comunidade surda.</p>
             
-            <p>A ética profissional é a base da atuação do intérprete de Libras, orientando suas decisões e ações em todos os contextos. Respeitar o Código de Ética é essencial para construir relações de confiança e promover a inclusão social de pessoas surdas.</p>
-        </div>
+            <p>A ética profissional é a base da atuação do intérprete de Libras, orientando suas decisões e ações em todos os contextos. Respeitar o Código de Ética é essencial para construir relações de confiança e promover la inclusão social de pessoas surdas.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Formação e Atuação do Intérprete de Libras</h2>
             <p>A formação do intérprete de Libras é um processo contínuo que envolve o domínio da língua, conhecimentos culturais e técnicos, e o desenvolvimento de habilidades específicas para a interpretação. A atuação profissional exige não apenas competência linguística, mas também ética, empatia e adaptabilidade a diferentes contextos.</p>
             
@@ -551,10 +630,10 @@
                 <li><strong>Mídia:</strong> Trabalhando em programas de TV, vídeos e transmissões online.</li>
             </ul>
             
-            <p>A atuação do intérprete de Libras é regulamentada pela Lei nº 12.319/2010, que estabelece os requisitos para a profissão e garante direitos trabalhistas. A formação e a atuação profissional devem ser pautadas pela ética, pelo respeito à diversidade e pelo compromisso com a inclusão social.</p>
-        </div>
+            <p>A atuação do intérprete de Libras é regulamentada pela Lei nº 12.319/2010, que estabelece os requisitos para a profissão e garante direitos trabalhistas. A formação e a atuação profissional devem ser pautadas pela ética, pelo respeito à diversidade e pelo compromisso com la inclusão social.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Libras no Contexto Religioso</h2>
             <p>A Libras desempenha um papel crucial no contexto religioso, garantindo que pessoas surdas tenham acesso pleno à espiritualidade, aos cultos e às atividades religiosas. A inclusão por meio da Libras permite que surdos participem ativamente das comunidades religiosas, fortalecendo sua fé e senso de pertencimento.</p>
             
@@ -572,9 +651,9 @@
             </ul>
             
             <p>A inclusão da Libras no contexto religioso é um passo importante para garantir que todas as pessoas, independentemente de sua condição auditiva, possam exercer sua liberdade religiosa e participar ativamente da vida espiritual da comunidade.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Libras no Contexto Artístico e Cultural</h2>
             <p>A Libras não é apenas uma ferramenta de comunicação, mas também uma expressão artística e cultural rica e vibrante. No contexto artístico, a Libras se manifesta em diversas formas, como teatro, dança, música, poesia e cinema, criando uma produção cultural única que reflete a experiência e a identidade surda.</p>
             
@@ -587,18 +666,18 @@
             <ul>
                 <li><strong>Fortalecer a identidade surda:</strong> A arte em Libras permite que surdos se reconheçam e se expressem em sua língua natural.</li>
                 <li><strong>Promover a inclusão:</strong> Eventos culturais acessíveis em Libras permitem que surdos participem plenamente da vida cultural.</li>
-                <li><strong>Difundir a cultura surda:</strong> A arte em Libras leva a cultura surda para além da comunidade, enriquecendo o cenário cultural brasileiro.</li>
+                <li><strong>Difundir la cultura surda:</strong> A arte em Libras leva a cultura surda para além da comunidade, enriquecendo o cenário cultural brasileiro.</li>
                 <li><strong>Estimular a criatividade:</strong> A Libras oferece novas possibilidades expressivas, inspirando artistas surdos e ouvintes.</li>
             </ul>
             
             <p>Investir na produção artística e cultural em Libras é uma forma de celebrar a diversidade e garantir que a cultura surda ocupe seu lugar de destaque na sociedade.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Libras no Contexto da Saúde</h2>
             <p>No contexto da saúde, a Libras é uma ferramenta essencial para garantir que pessoas surdas tenham acesso a atendimento médico de qualidade e compreendam plenamente diagnósticos, tratamentos e orientações. A comunicação eficaz entre profissionais de saúde e pacientes surdos é crucial para a promoção da saúde e o bem-estar.</p>
             
-            <p>A presença de intérpretes de Libras em consultas, exames e procedimentos médicos assegura que as informações sejam transmitidas de forma clara e precisa, evitando mal-entendidos que podem comprometer o cuidado com a saúde. Além disso, a capacitação de profissionais de saúde em Libras básica demonstra respeito e compromisso com a inclusão.</p>
+            <p>A presença de intérpretes de Libras em consultas, exames e procedimentos médicos assegura que as informações sejam transmitidas de forma clara e precisa, evitando mal-entendidos que podem comprometer o cuidado com a saúde. Além disso, a capacitação de profissionais de saúde em Libras básica demonstra respeito e compromisso com la inclusão.</p>
             
             <p>Os desafios da inclusão da Libras no contexto da saúde incluem:</p>
             
@@ -619,13 +698,13 @@
             </ul>
             
             <p>A inclusão da Libras no contexto da saúde é um direito garantido por lei e um passo fundamental para reduzir desigualdades e garantir que todas as pessoas tenham acesso a cuidados de saúde dignos e eficazes.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Libras no Contexto Jurídico</h2>
             <p>No contexto jurídico, a Libras é fundamental para garantir que pessoas surdas tenham acesso à justiça e compreendam plenamente seus direitos e deveres. A comunicação eficaz entre surdos e profissionais do direito é crucial para assegurar um processo justo e transparente.</p>
             
-            <p>A presença de intérpretes de Libras em audiências, interrogatórios, depoimentos e outras etapas processuais é essencial para que surdos possam se expressar e entender as informações jurídicas. Além disso, a capacitação de advogados, juízes e outros profissionais do direito em Libras básica demonstra compromisso com a inclusão e o respeito à diversidade.</p>
+            <p>A presença de intérpretes de Libras em audiências, interrogatórios, depoimentos e outras etapas processuais é essencial para que surdos possam se expressar e entender as informações jurídicas. Além disso, a capacitação de advogados, juízes e outros profissionais do direito em Libras básica demonstra compromisso com la inclusão e o respeito à diversidade.</p>
             
             <p>Os desafios da inclusão da Libras no contexto jurídico incluem:</p>
             
@@ -646,11 +725,11 @@
             </ul>
             
             <p>A inclusão da Libras no contexto jurídico é um direito garantido por lei e um passo fundamental para garantir que todas as pessoas, independentemente de sua condição auditiva, tenham acesso à justiça e possam exercer sua cidadania plenamente.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Libras no Contexto Organizacional</h2>
-            <p>No contexto organizacional, a Libras é uma ferramenta estratégica para promover a inclusão de pessoas surdas no mercado de trabalho. Empresas que investem na acessibilidade em Libras não apenas cumprem a legislação, mas também ampliam sua diversidade, criatividade e competitividade.</p>
+            <p>No contexto organizacional, a Libras é uma ferramenta estratégica para promover la inclusão de pessoas surdas no mercado de trabalho. Empresas que investem na acessibilidade em Libras não apenas cumprem a legislação, mas também ampliam sua diversidade, criatividade e competitividade.</p>
             
             <p>A inclusão da Libras no ambiente corporativo pode se dar por meio de:</p>
             
@@ -666,7 +745,7 @@
             <ul>
                 <li><strong>Diversidade:</strong> A presença de surdos enriquece o ambiente de trabalho com diferentes perspectivas.</li>
                 <li><strong>Inovação:</strong> A necessidade de adaptar processos e comunicações estimula a criatividade.</li>
-                <li><strong>Responsabilidade social:</strong> Demonstra compromisso com a inclusão e a igualdade de oportunidades.</li>
+                <li><strong>Responsabilidade social:</strong> Demonstra compromisso com la inclusão e a igualdade de oportunidades.</li>
                 <li><strong>Melhoria no clima organizacional:</strong> Um ambiente inclusivo aumenta a satisfação e o engajamento dos colaboradores.</li>
             </ul>
             
@@ -680,16 +759,16 @@
             </ul>
             
             <p>A inclusão da Libras no contexto organizacional é um investimento que traz retornos não apenas para os colaboradores surdos, mas para toda a empresa, tornando-a mais diversa, inovadora e socialmente responsável.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Recursos Tecnológicos de Acessibilidade em Libras</h2>
             <p>Os recursos tecnológicos têm desempenhado um papel crucial na promoção da acessibilidade em Libras, criando novas possibilidades de comunicação, educação e inclusão para pessoas surdas. Essas tecnologias vão desde aplicativos simples até softwares complexos de tradução automática.</p>
             
             <p>Entre os principais recursos tecnológicos de acessibilidade em Libras, destacam-se:</p>
             
             <ul>
-                <li><strong>Aplicativos de tradução:</strong> Ferramentas que convertem texto ou voz em Libras, facilitando a comunicação rápida.</li>
+                <li><strong>Aplicativos de tradução:</strong> Ferramentas que converten texto ou voz em Libras, facilitando a comunicação rápida.</li>
                 <li><strong>Plataformas de videochamada com interpretação:</strong> Sistemas que permitem a conexão com intérpretes em tempo real.</li>
                 <li><strong>Softwares educacionais:</strong> Programas que ensinam Libras de forma interativa, com jogos e exercícios.</li>
                 <li><strong>Dispositivos wearables:</strong> Tecnologias vestíveis que traduzem sons em vibrações ou sinais visuais.</li>
@@ -714,10 +793,10 @@
                 <li><strong>Necessidade de treinamento:</strong> Muitos usuários precisam de apoio para utilizar as tecnologias corretamente.</li>
             </ul>
             
-            <p>Apesar dos desafios, os recursos tecnológicos de acessibilidade em Libras representam um avanço promissor para a inclusão social de surdos. Investir no desenvolvimento e na democratização dessas tecnologias é essencial para construir uma sociedade verdadeiramente acessível.</p>
-        </div>
+            <p>Apesar dos desafios, os recursos tecnológicos de acessibilidade em Libras representam um avanço promissor para la inclusão social de surdos. Investir no desenvolvimento e na democratização dessas tecnologias é essencial para construir uma sociedade verdadeiramente acessível.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Futuro da Libras</h2>
             <p>O futuro da Libras está intrinsecamente ligado aos avanços tecnológicos, às mudanças sociais e ao fortalecimento dos direitos linguísticos da comunidade surda. A tendência é que a Libras se torne cada vez mais presente em diferentes esferas da sociedade, impulsionada pela conscientização sobre a importância da inclusão e pela evolução das ferramentas de acessibilidade.</p>
             
@@ -740,12 +819,12 @@
                 <li><strong>Participação comunitária:</strong> Incluir a comunidade surda nas decisões sobre políticas e projetos relacionados à Libras.</li>
             </ul>
             
-            <p>O futuro da Libras é promissor, mas depende do compromisso contínuo de governos, instituições e sociedade civil com a inclusão e o respeito à diversidade linguística. Investir na Libras é investir em um futuro mais justo e acessível para todos.</p>
-        </div>
+            <p>O futuro da Libras é promissor, mas depende do compromisso contínuo de governos, instituições e sociedade civil com la inclusão e o respeito à diversidade linguística. Investir na Libras é investir em um futuro mais justo e acessível para todos.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Pesquisa e Desenvolvimento em Libras</h2>
-            <p>A pesquisa e o desenvolvimento em Libras são fundamentais para o avanço do conhecimento sobre a língua, a cultura surda e as tecnologias de acessibilidade. Essas iniciativas contribuem para a valorização da Libras, a formação de profissionais qualificados e a criação de recursos inovadores que promovam a inclusão social.</p>
+            <p>A pesquisa e o desenvolvimento em Libras são fundamentais para o avanço do conhecimento sobre a língua, a cultura surda e as tecnologias de acessibilidade. Essas iniciativas contribuem para a valorização da Libras, a formação de profissionais qualificados e a criação de recursos inovadores que promovam la inclusão social.</p>
             
             <p>As áreas de pesquisa e desenvolvimento em Libras incluem:</p>
             
@@ -777,9 +856,9 @@
             </ul>
             
             <p>Investir em pesquisa e desenvolvimento em Libras é essencial para construir um futuro mais inclusivo, onde a diversidade linguística seja valorizada e todos tenham oportunidades iguais de desenvolvimento.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Glossário de Termos em Libras</h2>
             <p>Este glossário reúne alguns termos essenciais em Libras, com suas respectivas configurações de mão e significados. É importante lembrar que a Libras é uma língua viva e em constante evolução, podendo apresentar variações regionais.</p>
             
@@ -798,13 +877,13 @@
                 <li><strong>Saúde:</strong> Estado de bem-estar físico e mental. Sinalizado com a mão em "S" tocando o pulso oposto.</li>
                 <li><strong>Direitos:</strong> Conjunto de garantias legais. Sinalizado com a mão em "D" tocando a palma da outra mão.</li>
                 <li><strong>Cultura:</strong> Conjunto de tradições e valores. Sinalizado com a mão em "C" fazendo círculo no ar.</li>
-                <li><strong>Língua:</strong> Sistema de comunicação. Sinalizado com o indicador e polegar se tocando perto da boca.</li>
+                <li><strong>Língua:</strong> Sistema de comunicação. Sinalizado com o indicador e polegar se tocando perto da baca.</li>
             </ul>
             
             <p>Este glossário é apenas uma introdução. Para aprender Libras de forma completa, recomenda-se buscar cursos especializados, materiais didáticos e interação com a comunidade surda.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Um Guia Completo: Alfabeto Manual em Libras</h2>
             <p>O alfabeto manual, também conhecido como datilologia, é um sistema de representação das letras do alfabeto através de configurações de mão. Ele é utilizado em Libras para soletrar nomes próprios, siglas, palavras estrangeiras e termos que não possuem um sinal específico.</p>
             
@@ -856,9 +935,9 @@
             </div>
             
             <p>O domínio do alfabeto manual é fundamental para a comunicação em Libras, especialmente em situações que exigem soletração. Praticar regularmente é a chave para adquirir fluência na datilologia.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Recursos Adicionais para Aprendizado de Libras</h2>
             <p>Para aprofundar seus conhecimentos em Libras, existem diversos recursos disponíveis, desde cursos presenciais e online até materiais didáticos, aplicativos e comunidades de prática. Explorar esses recursos é fundamental para desenvolver fluência e compreender a cultura surda.</p>
             
@@ -891,20 +970,20 @@
             </ul>
             
             <p>Utilizar uma combinação desses recursos acelerará seu aprendizado e ajudará a desenvolver uma comunicação mais natural e contextualizada em Libras. Lembre-se de que a prática constante e o contato com a comunidade surda são essenciais para a fluência.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Conclusão</h2>
             <p>A Língua Brasileira de Sinais (Libras) é muito mais do que um sistema de comunicação; é a expressão viva de uma cultura rica e diversa, um instrumento de inclusão social e um direito fundamental da comunidade surda brasileira. Ao longo desta apostila, exploramos os fundamentos da Libras, sua estrutura gramatical, aspectos históricos e culturais, aplicações em diferentes contextos e os desafios e perspectivas para o futuro.</p>
             
-            <p>O aprendizado da Libras não se limita à aquisição de vocabulário e regras gramaticais; é uma jornada de imersão em uma nova forma de ver e interagir com o mundo. Através da Libras, podemos romper barreiras comunicacionais, promover a inclusão e valorizar a diversidade linguística que caracteriza nosso país.</p>
+            <p>O aprendizado da Libras não se limita à aquisição de vocabulário e regras gramaticais; é uma jornada de imersão em uma nova forma de ver e interagir com o mundo. Através da Libras, podemos romper barreiras comunicacionais, promover la inclusão e valorizar a diversidade linguística que caracteriza nosso país.</p>
             
-            <p>É importante destacar que a Libras é uma língua em constante evolução, assim como a comunidade surda que a utiliza. Novos sinais surgem, adaptações são feitas e a língua se renova para acompanhar as transformações sociais e tecnológicas. Portanto, o estudo da Libras deve ser contínuo, sempre acompanhado do respeito às particularidades culturais e linguísticas da comunidade surda.</p>
+            <p>É importante destacar que la Libras é uma língua em constante evolução, assim como a comunidade surda que a utiliza. Novos sinais surgem, adaptações são feitas e a língua se renova para acompanhar as transformações sociais e tecnológicas. Portanto, o estudo da Libras deve ser contínuo, sempre acompanhado do respeito às particularidades culturais e linguísticas da comunidade surda.</p>
             
-            <p>Que esta apostila sirva como ponto de partida para uma trajetória de aprendizado e descobertas. Que ela inspire não apenas o domínio de uma nova língua, mas também o compromisso com a construção de uma sociedade mais justa, acessível e inclusiva, onde todas as vozes - sejam elas orais ou sinalizadas - possam ser ouvidas e valorizadas.</p>
-        </div>
+            <p>Que esta apostila sirva como ponto de partida para uma trajetória de aprendizado e descobertas. Que ela inspire não apenas o domínio de uma nova língua, mas também o compromisso com la construcción de uma sociedade mais justa, acessível e inclusiva, onde todas as vozes - sejam elas orais ou sinalizadas - possam ser ouvidas e valorizadas.</p>
+        </section>
 
-        <div class="page">
+        <section class="content-section">
             <h2>Leitura Complementar</h2>
             <p>Para aprofundar seus conhecimentos em Libras e na cultura surda, recomendamos as seguintes leituras complementares:</p>
             
@@ -921,9 +1000,9 @@
             </ul>
             
             <p>Além dessas obras, recomendamos a busca por materiais produzidos pela comunidade surda, como blogs, canais no YouTube, perfis em redes sociais e eventos culturais. Essas fontes oferecem perspectivas autênticas e atualizadas sobre a vivência surda e o uso da Libras no cotidiano.</p>
-        </div>
+        </section>
 
-        <div class="page">
+        <section class="content-section references">
             <h2>Referências Bibliográficas</h2>
             
             <div class="reference">BRASIL. Lei nº 10.436, de 24 de abril de 2002. Dispõe sobre a Língua Brasileira de Sinais - Libras e dá outras providências. Diário Oficial da União, Brasília, DF, 25 abr. 2002.</div>
@@ -946,8 +1025,14 @@
             
             <div class="reference">BRASIL. Lei nº 12.319, de 1º de setembro de 2010. Regulamenta a profissão de Tradutor e Intérprete da Língua Brasileira de Sinais - Libras. Diário Oficial da União, Brasília, DF, 2 set. 2010.</div>
             
-            <div class="reference">BRASIL. Lei nº 13.146, de 6 de julho de 2015. Institui a Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). Diário Oficial da União, Brasília, DF, 7 jul. 2015.</div>
-        </div>
+            <div class="reference">BRASIL. Lei nº 13.146, de 6 de julho de 2015. Institui la Lei Brasileira de Inclusão da Pessoa com Deficiência (Estatuto da Pessoa com Deficiência). Diário Oficial da União, Brasília, DF, 7 jul. 2015.</div>
+        </section>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>Língua Brasileira de Sinais (LIBRAS) - Conteúdo para fins educacionais</p>
+        </div>
+    </footer>
 </body>
 </html>
