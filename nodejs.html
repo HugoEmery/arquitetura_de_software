@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitetura de Software na Plataforma Node.js</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Arquitetura de Software na Plataforma Node.js</h1>
+        </div>
+    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html" class="active"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="content-section">
+            <h2>Introdução</h2>
+            <p>É natural que o ambiente mais propício para o desenvolvimento de sistemas nesse novo paradigma, por sua natureza distribuída, seja a Internet. Dado que a linguagem mais utilizada hoje na Web é o JavaScript, implementado na maioria dos navegadores atuais, se deu a escolha dessa linguagem para o projeto.</p>
+            <p>Estando o JavaScript em franca expansão também no server side, com a implementação do Node.js, usado hoje por grandes organizações em suas soluções Web, essa também foi a linguagem utilizada no lado servidor do projeto.</p>
+            <p>Com o uso da mesma linguagem em todo o projeto, o mesmo ganhou coesão e houve redução na tradicional lacuna que separa os desenvolvimentos front end e back end. A importância da integração de sistemas em rede trouxe à tona a necessidade de uma arquitetura que defina como esses sistemas devem interagir entre si e como devem definir suas interfaces.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>O que é o Node.js</h2>
+            <p>O Node.JS é uma plataforma leve para você construir aplicações servidoras em linguagem Javascript e pode ser comparado, em um primeiro momento de análise, a tecnologias como o Java EE Web ou ASP.NET. Ao mesmo tempo, Node.JS é uma tecnologia minimalista. Ele é muito leve e não traz consigo servidores Web ou servidores de aplicação pesados, como o Java EE Web ou o ASP.NET.</p>
+            
+            <div class="highlight">
+                <p>O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (V8) para construir aplicações de Internet rápidas e com excelente escalabilidade.</p>
+            </div>
+            
+            <p>O Node.js usa um modelo de I/O direcionada a eventos assíncronos que o torna leve e eficiente, ideal para aplicações em tempo quase real com troca intensa de dados através de dispositivos distribuídos. Em termos arquiteturais, o Node é um servidor de programas e roda sobre um pequeno motor JavaScript.</p>
+            
+            <p>Não podemos dizer que node é um Framework nem um Middleware nem uma Linguagem, na verdade trata-se de um runtime Javascript. Com o crescimento exponencial de bibliotecas, recursos e da comunidade, podemos dizer que node tornou-se uma plataforma.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>O Surgimento do Node.js</h2>
+            <p>Apesar do Javascript ter mais de 20 anos, o seu uso server-side é bem recente. A linguagem Javascript foi criada em 1995, e se tornou a linguagem padrão dos browsers e consequentemente da Web para o desenvolvimento client-side.</p>
+            <p>Desde então, houveram diversas tentativas de implementar sua execução server-side. Todas elas fracassaram, devido à sua performance ser extremamente baixa comparado com as linguagens existentes no mercado, como o PHP ou Java.</p>
+            <p>Porém, com a rápida evolução da Web nos últimos anos, a linguagem Javascript e seus motores de execução passaram por diversas melhorias, tornando viável sua execução com outros propósitos além da manipulação de páginas HTML. Com essa nova fase no uso do Javascript, aplicações server-side passaram a ser implementadas, e em 2009 foi criado o primeiro ambiente de execução Javascript com este propósito: O Node.js.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Características do Node.js</h2>
+            <p>A principal característica que diferencia o Node.JS de outras tecnologias, como PHP, Java, C#, é o fato de sua execução ser single-thread. Ou seja, apenas uma thread é responsável por executar o código Javascript da aplicação, enquanto que nas outras linguagens a execução é multi-thread.</p>
+            
+            <h3>Mas o que isso significa na prática?</h3>
+            <p>Em um servidor web utilizando linguagens tradicionais, para cada requisição recebida é criada uma nova thread para tratá-la. A cada requisição, serão demandados recursos computacionais (memória RAM, por exemplo) para a criação dessa nova thread.</p>
+            <p>No modelo Node.js, apenas uma thread é responsável por tratar as requisições. Essa thread é chamada de Event Loop, e leva esse nome pois cada requisição é tratada como um evento. O Event Loop fica em execução esperando novos eventos para tratar, e para cada requisição, um novo evento é criado.</p>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <div class="comparison-title">Modelo Tradicional (Multi-thread)</div>
+                    <ul>
+                        <li>Uma thread por requisição</li>
+                        <li>Alto consumo de recursos</li>
+                        <li>Operações bloqueantes</li>
+                        <li>Escalabilidade vertical</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-title">Node.js (Single-thread)</div>
+                    <ul>
+                        <li>Event Loop para todas requisições</li>
+                        <li>Baixo consumo de recursos</li>
+                        <li>Operações não-bloqueantes</li>
+                        <li>Escalabilidade horizontal</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Apesar do Node.js ser single-threaded, sua arquitetura possibilita um número maior de requisições concorrentes sejam tratadas em comparação com o modelo tradicional, que é limitado devido ao alto consumo computacional pela criação e manutenção de threads a cada requisição.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Vantagens do Uso do Node.js</h2>
+            
+            <h3>Flexibilidade</h3>
+            <p>O NPM (Node Package Manager) é o gerenciador de pacotes do Node.js e também é o maior repositório de softwares do mundo. Isso faz do Node.js uma plataforma com potencial para ser utilizada em qualquer situação.</p>
+            
+            <h3>Leveza</h3>
+            <p>Criar um ambiente Node.js e subir uma aplicação é uma tarefa que não exige muitos recursos computacionais em comparação com outras tecnologias mais tradicionais. Se utilizado em conjunto com ferramentas como o Docker, o ganho na velocidade de deploy e replicação de máquinas pode ser muito significativo.</p>
+            
+            <h3>Produtividade da equipe</h3>
+            <p>O NPM fornece pacotes de código reusáveis e provavelmente aquela integração que você precisa fazer com outro sistema ou banco de dados já está implementado e disponível gratuitamente para instalar via NPM.</p>
+            
+            <div class="highlight">
+                <p>Com a mesma linguagem no frontend e backend (JavaScript), empresas podem ter ganhos de reutilização de código e criação de equipes multidisciplinares, com melhor aproveitamento de recursos.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Princípios de Arquitetura</h2>
+            <p>Acima de qualquer estrutura, vale ressaltar alguns princípios e motivações que devem estar acima de quaisquer convenções em seu código:</p>
+            
+            <ul>
+                <li><strong>Ajude seu cérebro a entender o projeto:</strong> Conseguimos lidar com apenas pequenas quantidades de informação de cada vez.</li>
+                <li><strong>Crie apenas os diretórios que precisa:</strong> Não saia criando dezenas de diretórios que acabarão vazios ou com apenas um arquivo dentro.</li>
+                <li><strong>Torne fácil localizar arquivos de código:</strong> Os nomes de pasta devem ser significativos, óbvios e easy de entender.</li>
+                <li><strong>Agrupe por feature, não por responsabilidade:</strong> Cada feature da sua aplicação pode possui uma série de arquivos que, se estiverem juntos, fica mais fácil de dar manutenção.</li>
+                <li><strong>Guarde seus testes perto do seu código:</strong> Coloque o arquivo JS de testes de cada feature na mesma pasta da feature.</li>
+                <li><strong>Diminua o acoplamento e aumente o reuso de software:</strong> Torne sua aplicação mais modular, com cada feature sendo um módulo mais independente.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Estrutura e Performance</h2>
+            <p>Mais popular a cada dia no mundo do software, sua arquitetura single thread (Thread Única) com um sistema não bloqueante permite atingir um número absurdo de requisições por segundo com pouco recurso computacional.</p>
+            
+            <p>De forma simples, isso se dá porque Node.js usa um loop de eventos de i/o (input/output) para processar requisições de forma intermitente, assim que um evento é finalizado o mesmo dispara um callback (função de retorno), assim o evento é posto novamente na fila e praticamente elimina-se a ociosidade no processamento.</p>
+            
+            <p>Em plataformas mais convencionais usa-se threads, porém enquanto elas aguardam uma resposta do evento poderiam estar fazendo outras tarefas, mas ela fica lá "matando tempo" e bloqueando outros eventos que estão na fila, além de exigir um controle por parte do Sistema Operacional para que todas as threads sejam gerenciadas. Isso requer mais recurso computacional e resulta em perda de performance.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Escalabilidade</h2>
+            <p>Node.js foi pensado para ser altamente escalável horizontalmente. Ao invés de investir em discos SSD, Memória ROM, RAM, você pode simplesmente virtualizar a sua máquina e/ou adicionar mais máquinas no mesmo ponto físico ou não, tornando assim sua escalabilidade muito mais simples e barata e eficaz.</p>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <div class="comparison-title">Escalabilidade Vertical</div>
+                    <p>Aumento dos recursos individuais (CPU, RAM, disco)</p>
+                    <ul>
+                        <li>Mais poder de processamento</li>
+                        <li>Maior capacidade de armazenamento</li>
+                        <li>Limite físico de hardware</li>
+                        <li>Custo mais elevado</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-title">Escalabilidade Horizontal</div>
+                    <p>Adição de mais instâncias/nós ao sistema</p>
+                    <ul>
+                        <li>Adicionar mais máquinas/servidores</li>
+                        <li>Distribuição de carga</li>
+                        <li>Maior disponibilidade</li>
+                        <li>Custo mais acessível</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Arquitetura Limpa</h2>
+            <p>Arquitetura Limpa, do termo inglês Clean Architecture, é um padrão arquitetural usado na engenharia de software. Esse padrão foi conceituado por Robert Martin, mais conhecido como Uncle Bob, um engenheiro de software famoso e um dos autores do Manifesto Ágil.</p>
+            
+            <p>A ideia dessa arquitetura é criar componentes fracamente acoplados que possam ser conectados através de portas e adaptadores, o que permite o isolamento das regras de negócio da aplicação de preocupações externas.</p>
+            
+            <h3>Camadas da Arquitetura Limpa:</h3>
+            
+            <ul>
+                <li><strong>Domínio:</strong> O coração do software, reunindo as regras cruciais de negócios da empresa inteira.</li>
+                <li><strong>Aplicação:</strong> Contém as regras de negócio específicas da aplicação e os casos de uso.</li>
+                <li><strong>Interfaces:</strong> Adaptadores que isolam as entidades e casos de uso das ferramentas utilizadas.</li>
+                <li><strong>Infraestrutura:</strong> Tudo o que existe independentemente da aplicação: bibliotecas externas, banco de dados, etc.</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>A lógica de negócios não deve depender de GraphQL ou REST por exemplo, ou se os dados estão sendo obtidos por um banco de dados ou um arquivo CSV simples.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Express.js</h2>
+            <p>Express é um framework para desenvolvimento de aplicações Web, minimalista e flexível, que roda sobre a plataforma Node.js. Provendo um conjunto robusto de funcionalidades para a construção de aplicações Web, sejam elas Spa (Single-page Applications), aplicações com múltiplas páginas, ou aplicações híbridas.</p>
+            
+            <p>Com diversos métodos utilitários HTTP e de middleware disponíveis, o Express torna fácil a criação de Web APIs amigáveis de forma rápida e robusta. O Express provê uma pequena camada de funcionalidades fundamentais para aplicações Web, porém, sem obscurecer as funcionalidades já disponíveis no Node.js.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Casos de Uso Mais Comuns</h2>
+            
+            <ul>
+                <li><strong>Aplicações em Tempo Real:</strong> Como aplicações de chat que exigem pouco processamento e basicamente transferem mensagens.</li>
+                <li><strong>Ambientes Escaláveis:</strong> Com grande número de conexões concorrentes, já que suporta mais conexões simultâneas que servidores tradicionais.</li>
+                <li><strong>Camada de Entrada do Servidor:</strong> Faz pouco processamento de dados e passa a requisição para serviços de backend.</li>
+                <li><strong>Mocks e Protótipos:</strong> Possibilita criar mocks e protótipos de APIs e serviços de backend com grande rapidez.</li>
+                <li><strong>API com NoSQL por trás:</strong> Comunicação intuitiva com bancos NoSQL baseados em JSON.</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2>Considerações Finais</h2>
+            <p>Node.js está em uma incrível ascensão, é uma ferramenta extremamente poderosa e que está mudando muita coisa no mundo do software. Suas grandes vantagens são extensibilidade, escalabilidade e performance, porém é necessária uma boa pré-avaliação antes de tomar a decisão de fazer algo em Node, pois não é a solução ideal para todos os casos.</p>
+            
+            <p>Com o passar dos anos, a tecnologia Node.js já rivaliza com tecnologias tradicionais como o ASP.NET, JSF, Ruby, PHP e Python em ambientes dinâmicos como startups e empresas de produtos Web. Mesmo empresas tradicionais no Brasil já têm começado a experimentar essa tecnologia bastante promissora.</p>
+            
+            <div class="highlight">
+                <p>Para grandes aplicações, a abordagem minimalista do Node.js permite criar ambientes Web muito leves, onde você adiciona módulos conforme necessário com o comando <code>npm install</code>. Esta é uma das fatores de sucesso do Node.js.</p>
+            </div>
+        </section>
+
+        <section class="content-section references">
+            <h2>Referências</h2>
+            <ul>
+                <li>CARVALHO. Afonso A P. Arquitetura e desenvolvimento de uma aplicação web distribuída baseada em javascript. Rio de Janeiro, RJ – Brasil. 2014.</li>
+                <li>DUARTE, Leo. Boas práticas de arquitetura com NodeJS + Express. 2017.</li>
+                <li>LENON. Node.js – O que é, como funciona e quais as vantagens. 2018.</li>
+                <li>MENDES, Marco. Arquitetura de Software: Não Alimente Seus Paquidermes. 2017.</li>
+                <li>SCHUMACHER, Matheus Schafer. Node.js - Uma descrição do ponto de vista da Arquitetura de Software. 2019.</li>
+                <li>YODER, Joseph, apud FOOTE, Brian. Uma Breve Introdução à Arquitetura Limpa com Node.js. 2021.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Arquitetura de Software na Plataforma Node.js - Conteúdo para fins educacionais</p>
+        </div>
+    </footer>
+</body>
+</html>
