@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps e Gestão do Ciclo de Vida de Aplicações</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+     <!-- Header -->
+    <header>
+        <div class="header-graphic"></div>
+        <div class="header-content">
+            <h1>Ética Geral e Profissional</h1>
+            <p>Fundamentos da ética e sua aplicação no contexto profissional e tecnológico</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html" class="active"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>DEVOPS E GESTÃO DO CICLO DE VIDA DE APLICAÇÕES</h1>
+        </header>
+
+        <section id="nossa-historia">
+            <h2>NOSSA HISTÓRIA</h2>
+            <p>A nossa história inicia com a realização do sonho de um grupo de empresários, em atender à crescente demanda de alunos para cursos de Graduação e Pós-Graduação. Com isso foi criado a nossa instituição, como entidade oferecendo serviços educacionais em nível superior.</p>
+            <p>A instituição tem por objetivo formar diplomados nas diferentes áreas de conhecimento, aptos para a inserção em setores profissionais e para a participação no desenvolvimento da sociedade brasileira, e colaborar na sua formação contínua. Além de promover a divulgação de conhecimentos culturais, científicos e técnicos que constituem patrimônio da humanidade e comunicar o saber através do ensino, de publicação ou outras normas de comunicação.</p>
+            <p>A nossa missão é oferecer qualidade em conhecimento e cultura de forma confiável e eficiente para que o aluno tenha oportunidade de construir uma base profissional e ética. Dessa forma, conquistando o espaço de uma das instituições modelo no país na oferta de cursos, primando sempre pela inovação tecnológica, excelência no atendimento e valor do serviço oferecido.</p>
+            <div class="page-number">Página 2</div>
+        </section>
+
+        <section class="summary">
+            <h2>Sumário</h2>
+            <ul>
+                <li>INTRODUÇÃO ...... 4</li>
+                <li>O QUE É DEVOPS? ...... 6</li>
+                <li>AÇÕES RECOMENDADAS NA PRÁTICA DEVOPS ...... 9</li>
+                <li>OS BENEFÍCIOS DE IMPLEMENTAR DEVOPS ...... 11</li>
+                <li>DEVOPS NAS TRINCHEIRAS ...... 15</li>
+                <li>O QUE É GERENCIAMENTO DO CICLO DE VIDA DE APLICAÇÕES ...... 17</li>
+                <li>ETAPAS DO ALM ...... 19</li>
+                <li>OS PILARES DO ALM ...... 22</li>
+                <li>OS MODELOS DE CICLO DE VIDA DO SOFTWARE ...... 23</li>
+                <li>CONSIDERAÇÕES FINAIS ...... 27</li>
+                <li>REFERÊNCIAS ...... 28</li>
+            </ul>
+            <div class="page-number">Página 3</div>
+        </section>
+
+        <section id="introducao">
+            <h2>INTRODUÇÃO</h2>
+            <p>Apesar do mercado de desenvolvimento de software passar por um momento extraordinário, com uma demanda crescente, algumas empresas tem encontrado sérias dificuldades para adaptar-se a esse novo cenário.</p>
+            <p>Softwares cada vez mais funcionais e sofisticados, público extremamente exigente, aliado a necessidade de entregas rápidas e constantes. Tal realidade tem obrigado os profissionais de TI a repensarem conceitos arraigados e consolidados, obrigando-os a adotarem novos modelos que possibilitem estarem alinhados à nova demanda de entrega ágil.</p>
+            <p>A inevitável necessidade de inovação na gestão e no Ciclo de Vida das Aplicações motivou o surgimento de uma nova metodologia denominada DevOps que é a fusão do termo "development" (dev) e o termo "operations" (infraestrutura). Seu conceito basicamente propõe que os processos de desenvolvimento e operação da aplicação atuem integralmente, de modo a criar um fluxo contínuo de novas experiências mais eficientes, frequentes e mais confiáveis aos usuários.</p>
+            <p>Seu ciclo de vida é regido por 5 princípios básicos que podem ser lembrados pelo acrônimo CALMS (em inglês), são eles: Culture (Cultura), Automation (Automação), Lean (Enxuto), Measurement (Medição) e Sharing (Compartilhamento).</p>
+            <p>Das muitas mudanças sugeridas por este novo ciclo de vida, as mais relevantes e que merecem destaque são as culturais e tecnológicas. A cultura DevOps incentiva o desenvolvimento contínuo e colaborativo com entregas de alta qualidade, não existindo barreiras para o compartilhar de informações, onde anteriormente havia nós (dev) e eles (ops), agora existe um TIME.</p>
+            <p>Já o processo tecnológico exigirá um alto nível de automação para gerenciar de forma única todo o ciclo, uma vez que a própria arquitetura das aplicações deverá ser redesenhada para um modelo de serviços, com pontos de contato com o mundo exterior através de um ecossistema de APIs.</p>
+            <div class="page-number">Páginas 4-5</div>
+        </section>
+
+        <section id="o-que-e-devops">
+            <h2>O QUE É DEVOPS?</h2>
+            <p>A palavra "DevOps" é a combinação dos termos "desenvolvimento" e "operações". No entanto, ela representa um conjunto de ideias e práticas que ultrapassam o significado desses dois termos. O DevOps inclui segurança, maneiras colaborativas de trabalhar, análise de dados e muitas outras práticas e conceitos. Mas do que se trata exatamente?</p>
+            <p>A metodologia DevOps descreve abordagens que ajudam a acelerar os processos necessários para levar uma ideia do desenvolvimento à implantação em um ambiente de produção no qual ela seja capaz de gerar valor para o usuário. Essas ideias podem ser um novo recurso de software, uma solicitação de aprimoramento ou uma correção de bug, entre outros.</p>
+            <p>Essas abordagens exigem comunicação frequente entre as equipes de desenvolvimento e operações, trabalho colaborativo e empatia com os demais membros das equipes. Escalabilidade e provisionamento flexível também são necessários. Com o DevOps, aqueles que mais precisam de recursos conseguem obtê-los por meio do autosserviço e da automação.</p>
+            <p>Os desenvolvedores, que normalmente criam códigos em um ambiente de desenvolvimento padrão, trabalham em estreita colaboração com a equipe de operações de TI para acelerar a compilação de programas de software, a realização de testes e o lançamento de soluções, sem sacrificar a confiabilidade.</p>
+            <p>Obviamente, isso significa alterações mais frequentes no código e utilização mais dinâmica da infraestrutura. As estratégias de gerenciamento tradicionais não dão conta desse tipo de demanda. Serão necessárias mudanças se você quiser uma vantagem competitiva.</p>
+            
+            <div class="highlight-box">
+                <p>A metodologia DevOps tem se mostrado extremamente eficiente e impacta em três importantes pilares do ciclo de vida de aplicações: Aumento de Produtividade, Maior Qualidade na Entrega e Redução de Custo no Desenvolvimento.</p>
+            </div>
+            
+            <p>Na DATA SYSTEM não foi diferente, com uma cultura voltada para a qualidade, produtividade e agilidade, resultados significativos foram alcançados. A clara definição dos processos e objetivos, a integração colaborativa entre os departamentos aliado a implementação de metodologias ágeis no processo de desenvolvimento concedeu para o DevOps méritos de uma moderna e importante mudança de conceito e para a empresa a satisfação de poder entregar soluções de maior performance aos seus clientes e singular notoriedade no mercado.</p>
+            <p>Apesar dos conceitos serem relativamente novos, DevOps já é uma realidade no mercado de TI. A adoção da nova metodologia requer quebra de paradigmas tanto das empresas quanto dos profissionais, além de exigir uma comunicação muito mais efetiva entre as áreas. A inflexibilidade diante dessa tendência poderá ter um alto custo e tornar profissionais e empresas pouco competitivas e sustentáveis em um futuro bem próximo.</p>
+            <p>Devops é um termo criado para descrever um conjunto de práticas para integração entre as equipes de desenvolvimento de softwares, operações (infraestrutura ou sysadmin) e de apoio envolvidas (como controle de qualidade) e a adoção de processos automatizados para produção rápida e segura de aplicações e serviços. O conceito propõe novos pensamentos sobre o trabalho para a valorização da diversidade de atividades e profissionais envolvidos e atitudes colaborativas. É um processo que torna possível o desenvolvimento ágil de aplicações em um modelo de gestão de infraestrutura definido sob regras rígidas e burocráticas.</p>
+            <p>Tradicionalmente Desenvolvimento e Operações são setores diferentes nas empresas e com motivações distintas. O setor de Desenvolvimento já evoluiu com adoção de metodologias ágeis e estão mais alinhadas ao negócio. O setor já consegue entregas rápidas e constantes para atender a expectativa dos clientes por novos recursos e assim valorizar o produto da empresa. A área de Operações, por sua vez, deseja o mínimo de alterações possíveis no ambiente de produção, pois podem gerar um novo ponto de instabilidade o que desvalorizará o produto da empresa. Assim há interesses contraditórios. Um setor quer evoluir e o outro garantir.</p>
+            <div class="page-number">Páginas 6-8</div>
+        </section>
+
+        <section id="acoes-recomendadas">
+            <h2>AÇÕES RECOMENDADAS NA PRÁTICA DEVOPS</h2>
+            <h3>Pessoas integradas</h3>
+            <p>Apoiar e prover pensamentos que integrem as pessoas, que façam com que partilhem suas histórias e se desenvolva a empatia entre elas para um trabalho conjunto eficaz e duradouro.</p>
+            
+            <h3>Foco no projeto</h3>
+            <p>Crie uma atmosfera livre de culpa, com o objetivo em comum: o projeto. Profissionais devem defender o projeto e não suas áreas de atuação. É preciso romper tradições e fazer com que as equipes tenham um comportamento colaborativo, construtivo e de respeito mútuo.</p>
+            
+            <h3>Reuniões conjuntas</h3>
+            <p>Em vez de promover discussões isoladas com a equipe de desenvolvimento, operações ou apoio, sempre integre pelo menos um profissional de cada área nas discussões dos setores para que tenham entendimento dos objetivos a serem alcançados, recursos e demanda previstos, requisitos necessários, problemas já enfrentados e riscos envolvidos sob uma mesma ótica.</p>
+            
+            <h3>Negócio Just-in-Time</h3>
+            <p>Fornecimento de aplicações e serviços que promovam um desenvolvimento do negócio com qualidade e otimização do uso de recursos humano, tempo, tecnológicos e/ou financeiros.</p>
+            
+            <h3>Infraestrutura para negócio</h3>
+            <p>Garantir continuamente a infraestrutura com foco no negócio. Implantar mecanismos que permitam a área de operações atenderem as expectativas do negócio e ainda sim manter sua confiabilidade.</p>
+            
+            <h3>Desenvolvimento Ágil</h3>
+            <p>O desenvolvimento do software deve seguir uma das metodologias ágeis para entregas rápidas e contínuas. (SCRUM, XP, …)</p>
+            
+            <h3>Ambientes de Desenvolvimento, Homologação e Produção</h3>
+            <p>Que haja pelo menos esses três ambientes e que sejam idênticos para evitar que uma versão de software seja testada em um ambiente e executada em produção em outro e assim surjam problemas não previstos.</p>
+            
+            <h3>Padronização nas configurações</h3>
+            <p>Para garantia de que os ambientes sejam idênticos e contenham apenas mudanças homologadas, é preciso implementar um gerenciamento de configuração para que qualquer mudança inserida manualmente nos servidores e não através de uma gerência de configurações seja automaticamente desfeita.</p>
+            
+            <h3>Provisionamento dinâmico dos ambientes</h3>
+            <p>Os ambientes devem ser criados sempre que necessários em processos automatizados para garantia de que estejam sempre disponíveis. A equipe de desenvolvimento deve receber a infraestrutura necessária para seu trabalho sem necessidade de intervenção da equipe de operações. Ferramentas de automação deverão criar servidores, instalar serviços, configurá-los e testar-los. Novos servidores poderão ser criados temporariamente para ações específicas ou para escalonamento da solução.</p>
+            
+            <h3>Infraestrutura como um código</h3>
+            <p>As configurações e scripts de execução para instalação de serviços devem ser versionados no mesmo repositório e da mesma forma que o código da aplicação para que possam ser disponibilizados, auditados e evoluídos juntos.</p>
+            
+            <h3>Liberdade para Deploy</h3>
+            <p>A equipe de desenvolvimento deve ser autônoma para realização de deploy nos ambientes, até produção sem necessidade de processos burocráticos e interferência da área de operações.</p>
+            
+            <h3>Integração contínua</h3>
+            <p>Ferramentas devem orquestrar todo o processo envolvido na entrega de nova versão da aplicação que inclui a criação dos ambientes caso necessário, deploys dos códigos juntamente as configurações da infra, testes automatizados, possibilidade de reversão e auditoria.</p>
+            
+            <h3>Gestão de incidentes</h3>
+            <p>Para que a infraestrutura seja ágil é determinante que haja estratégias para gestão de incidentes bem definidas, políticas de roll back, backups e ferramentas de monitoração proativas.</p>
+            <div class="page-number">Páginas 9-10</div>
+        </section>
+
+        <section id="beneficios-devops">
+            <h2>OS BENEFÍCIOS DE IMPLEMENTAR DEVOPS</h2>
+            
+            <h3>Segurança</h3>
+            <p>Trabalhar com DevOps faz com que a empresa utilize a infraestrutura e tenha diretrizes específicas. Isso torna viável aos gestores a definição e o rastreamento de conformidade. Além de garantir a segurança das operações, tudo fica mais claro.</p>
+            <p>A possibilidade de monitorar os registros em tempo real e analisar o funcionamento do software contribui para que os erros sejam diagnosticados. Isso aumenta a rapidez na solução de problemas e permite a entrega contínua, viabilizando mais testes feitos pela equipe responsável.</p>
+            <p>As ferramentas adotadas com a metodologia DevOps fazem com que sejam definidas as ações a serem concluídas para que a produção aconteça imediatamente. Logo após a construção do software e dos testes realizados, é possível garantir a segurança operacional e a satisfação do seu público.</p>
+            
+            <h3>Facilidade em intervenção proativa</h3>
+            <p>Com as equipes integradas e multidisciplinares, todo o quadro de funcionários de TI se envolve no mesmo projeto de software. O gestor tem a possibilidade de ouvir os problemas e o time pode chegar, de forma harmoniosa, à solução de cada falha observada.</p>
+            <p>Essa intervenção proativa diminui os gastos e economiza o tempo de produção ou entrega. É viável, portanto, identificar erros e resolvê-los o mais rápido possível. Isso ocorre porque os projetos não são entregues prontos, mas sim por etapas.</p>
+            <p>As pequenas entregas, ao contrário daquelas únicas e mais amplas, fazem com que o produto criado seja otimizado e atenda mais às necessidades do seu cliente.</p>
+            
+            <h3>Maior capacitação</h3>
+            <p>Não existe escapatória: para utilizar a metodologia, é preciso entender o que é DevOps e formar equipes muito bem treinadas. Será necessário capacitar seus funcionários e promover treinamentos com profissionais especializados, qualificando ainda mais os times.</p>
+            <p>Ao aumentar o preparo dos colaboradores, automaticamente você eleva a qualidade do seu produto. Além disso, a empresa diminuirá a rotatividade, economizará com contratações e será referência no setor em que atua.</p>
+            <p>Os funcionários trabalharão com mais comprometimento e uma maior produtividade, refletindo no resultado do software e em sua relação com o cliente. Isso também deixa os times mais abertos a mudanças e a ouvirem o que os gestores têm a dizer, já que eles se sentem valorizados e parte importante do processo de criação e viabilização.</p>
+            
+            <h3>Colaboração entre as equipes</h3>
+            <p>Quando uma organização opta por trabalhar com automação em DevOps, tudo flui mais facilmente. Podemos citar como vantagem a criação de equipes mais entrosadas e multidisciplinares.</p>
+            <p>Com esse novo quadro, a empresa trabalha com colaboradores aptos a solucionarem problemas amplos e que não se limitam a um único setor. A comunicação acaba por ser mais clara, objetiva e harmoniosa. Essa vantagem faz com que os colaboradores conheçam todas as etapas de criação e estejam presentes nas decisões e operações.</p>
+            
+            <h3>Equipes integradas</h3>
+            <p>A metodologia não só promove a união de dois times específicos como também aproxima as áreas dos gestores e donos do produto (PO), viabilizando uma comunicação mais aberta e eficiente.</p>
+            <p>Com as equipes trabalhando em parceria, é possível identificar os problemas mais rapidamente e, por meio da troca de experiências, propor, debater ou implementar soluções com maior velocidade. Assim, o trabalho se torna mais estável e fluido.</p>
+            <p>Além da redução de custos que a agilidade na solução de problemas proporciona, muitas empresas veem nesse modelo a possibilidade de diminuírem gastos também com mão de obra. Por isso, em organizações de pequeno porte, é comum observarmos as duas áreas dando lugar a uma equipe única, mais enxuta e multidisciplinar.</p>
+            
+            <h3>Processos mais simples e automatizados</h3>
+            <p>Uma característica da solução DevOps é utilizar práticas e recursos para deixar os processos mais simples e menos burocráticos. Um exemplo é o uso da ferramenta Kanban, que dá transparência, permitindo que todos vejam as etapas do projeto e quem está realizando cada atividade o que facilita a interação entre os profissionais.</p>
+            <p>Não é diferente no desenvolvimento: qualquer atividade rotineira de codificação, implementação ou testes deve ser automatizada sempre que possível. Uma tendência em ambientes DevOps é a utilização de Cloud Computing, visto que agrega tecnologia de ponta e reduz a operação de infraestrutura.</p>
+            <p>Com tudo isso, os profissionais ganham tempo para que:</p>
+            <ul>
+                <li>se dediquem à melhoria contínua;</li>
+                <li>aprimorem features;</li>
+                <li>monitorem aplicações;</li>
+                <li>documentem;</li>
+                <li>pesquisem;</li>
+                <li>compreendam falhas.</li>
+            </ul>
+            
+            <h3>Entregas com mais qualidade e velocidade</h3>
+            <p>As melhorias significativas no ambiente de produção propiciam a cooperação entre equipes e simplificação de processos. Isso garante a confiabilidade de seus sistemas, além dos aumentos de qualidade e velocidade nas entregas.</p>
+            <p>A capacidade de lançar recursos frequentemente e corrigir problemas com agilidade, mantendo uma experiência de uso positiva para o cliente, agrega uma importante vantagem competitiva ao negócio.</p>
+            <div class="page-number">Páginas 11-14</div>
+        </section>
+
+        <section id="devops-trincheiras">
+            <h2>DEVOPS NAS TRINCHEIRAS</h2>
+            <p>A maioria dos técnicos querem saber sobre os detalhes da entrega contínua, já que é impossível alcançar ganhos de produtividade DevOps sem automação e workflows aprimorados. Armon Dadgar, co-fundador da Hashicorp, famosa por criar ambientes de desenvolvimento portátil com o Vagrant, desmembra o DevOps em 7 elementos essenciais: construir, testar, empacotar, provisionar, cuidar da segurança, fazer o deploy e monitorar.</p>
+            
+            <div class="image-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNjAwIDMwMCI+PHJlY3QgeD0iMTAwIiB5PSI1MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI1MCIgZmlsbD0iIzM0OThkYiIgc3Ryb2tlPSIjMmMzZTUwIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxNTAiIHk9IjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkNSRUFURTwvdGV4dD48cmVjdCB4PSIzMDAiIHk9IjUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMzQ5OGRiIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjM1MCIgeT0iODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UExBTjwvdGV4dD48cmVjdCB4PSI1MDAiIHk9IjUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMzQ5OGRiIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjU1MCIgeT0iODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UkVMRUFTRTwvdGV4dD48cmVjdCB4PSIyMDAiIHk9IjE1MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI1MCIgZmlsbD0iIzM0OThkYiIgc3Ryb2tlPSIjMmMzZTUwIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIyNTAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5DT05GSUdVUkU8L3RleHQ+PHJlY3QgeD0iNDAwIiB5PSIxNTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iNTAiIGZpbGw9IiMzNDk4ZGIiIHN0cm9rZT0iIzJjM2U1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNDUwIiB5PSIxODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+T1BTPC90ZXh0PjxyZWN0IHg9IjMwMCIgeT0iMjUwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjMzQ5OGRiIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjM1MCIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1vbml0b3I8L3RleHQ+PC9zdmc+" alt="Elementos do DevOps">
+                <div class="image-caption">Fonte: https://blog.mandic.com.br/artigos/o-real-significado-do-termo-devops/</div>
+            </div>
+            
+            <p>Alguém pode notar que o método waterfall inclui esses mesmos elementos. Então, como chamar isso de DevOps? Defende Dadgar: "O objetivo do DevOps é paralelizar o máximo possível. Esses 7 passos são necessários e suficientes, mas não precisam ser feitos sequencialmente ".</p>
+            <p>De forma desacoplada, a equipe de operações processa o provisionamento e a implementação; os profissionais de segurança bloqueiam o(s) ambiente(s) em que os aplicativos serão executados; e os desenvolvedores constroem, testam e empacotam os aplicativos. Dadgar também diz que os desenvolvedores devem ser responsáveis pelo monitoramento de aplicativos para cumprir um princípio-chave do DevOps – ou seja, os desenvolvedores devem manter a responsabilidade pelos aplicativos em produção, ao invés de deixar a tarefa para a equipe de operações.</p>
+            <p>De acordo com Dadgar, um ponto crítico é o provisionamento, cujo ciclo de vida complexo tem ajudado a orientar a adoção DevOps:</p>
+            <div class="highlight-box">
+                <p>"Como provisionar e gerenciar essa complexidade, especialmente quando as coisas interagem umas com as outras? Não que o servidor web seja totalmente dissociado do cache, do banco de dados e do balanceador de carga frontend. Eles são todos fortemente relacionados de uma forma complexa. À medida que as coisas vão sendo terceirizadas, vou executar o meu servidor web e eu vou usar um banco de dados da Amazon, e DynDNS e CloudFlare na frente. Agora estou gerenciando o ciclo de vida através de recursos de fornecedores totalmente diferentes", explica o executivo.</p>
+            </div>
+            <p>Para ele, o DevOps é mais processo do que ferramentas. "Acho que é isso que se perde no modo como está representado. Há uma fixação em ferramentas porque as ferramentas são fáceis. O difícil é mudar o processo organizacional".</p>
+            <div class="page-number">Páginas 15-16</div>
+        </section>
+
+        <section id="gerenciamento-ciclo-vida">
+            <h2>O QUE É GERENCIAMENTO DO CICLO DE VIDA DE APLICAÇÕES</h2>
+            <p>O gerenciamento do ciclo de vida de aplicações (ALM) abrange as pessoas, as ferramentas e os processos que gerenciam o ciclo de vida de uma aplicação, desde o conceito até o fim do ciclo.</p>
+            <p>O ALM é composto por várias disciplinas que já foram separadas em processos de desenvolvimento legados, como o método de desenvolvimento em cascata. Elas incluem gerenciamento de projetos, gerenciamento de requisitos, desenvolvimento de aplicações, teste e controle de qualidade, implantação e manutenção.</p>
+            <p>Ao integrar essas disciplinas e permitir que as equipes colaborem de maneira mais eficiente na sua organização, o gerenciamento do ciclo de vida de aplicações possibilita as abordagens de desenvolvimento ágil e DevOps.</p>
+            <p>Além disso, a adoção do ALM promove a entrega contínua de aplicações e atualizações frequentes, como várias por dia, em vez de novas versões apenas a cada poucos meses ou uma vez por ano.</p>
+            <p>O gerenciamento do ciclo de vida de aplicações oferece um framework para desenvolvimento de aplicações e também ajuda você a gerenciar suas aplicações ao longo do tempo. As práticas de ALM seguem um plano pré-estabelecido simples e os requisitos para transformar uma ideia em uma aplicação.</p>
+            <p>Ao adotar uma abordagem de desenvolvimento de aplicações com ALM, é preciso considerar todo o ciclo de vida da aplicação. É necessário levar em conta a manutenção e as atualizações futuras, incluindo quando a aplicação será descontinuada e substituída.</p>
+            <p>Juntando essas informações, o ALM é capaz de oferecer implantações mais rápidas, maior visibilidade do fluxo de trabalho, produtos de melhor qualidade e maior satisfação do desenvolvedor.</p>
+            
+            <div class="highlight-box">
+                <p>"Gerenciamento do ciclo de vida da aplicação é um método de gerenciar o desenvolvimento de software e as iniciativas da TI utilizando um processo automatizado do inicio ao fim e integrando a informação em cada estágio do projeto. O ALM ajuda a sincronizar os objetivos do negócio com as prioridades de investimentos da TI e pode transformar a TI de um centro de custos para um valioso ativo do negócio."</p>
+            </div>
+            
+            <p>A Governança engloba todas as decisões tomadas e o gerenciamento do projeto da aplicação, ela se estende por todo o tempo do ciclo de vida.</p>
+            <p>O Desenvolvimento, é o processo de criação da aplicação, incluindo a coleta de requisitos, o design, a programação e os testes de unidade.</p>
+            <p>As Operações, são os processos de manutenção da aplicação, incluindo o suporte, o gerenciamento de incidentes e problemas, e as atualizações.</p>
+            <div class="page-number">Páginas 17-18</div>
+        </section>
+
+        <section id="etapas-alm">
+            <h2>ETAPAS DO ALM</h2>
+            
+            <h3>1. Gerenciamento de aplicações</h3>
+            <p>O gerenciamento de aplicações é a primeira fase do ALM. Nela, o foco é a governança e a gestão do portfólio de aplicações (APM). O APM é o processo de gerenciamento do ciclo de vida de todas as aplicações da sua empresa, desde a concepção até a descontinuação. Ele ajuda você a decidir quais aplicações criar, comprar ou descontinuar, com base nas necessidades do seu negócio.</p>
+            
+            <h3>2. Desenvolvimento de software</h3>
+            <p>O desenvolvimento de software é a segunda fase do ALM. Nela, o foco está na criação da aplicação. Isso inclui o gerenciamento de requisitos, o design, a codificação, os testes e a implantação.</p>
+            
+            <h3>3. Gerenciamento de implementação de software</h3>
+            <p>O gerenciamento de implementação de software é a terceira fase do ALM. Nela, o foco está na implantação da aplicação em produção. Isso inclui o gerenciamento de versões, a configuração, a implantação e o monitoramento.</p>
+            
+            <h3>4. Gerenciamento de operações</h3>
+            <p>O gerenciamento de operações é a quarta fase do ALM. Nela, o foco está na manutenção da aplicação em produção. Isso inclui o gerenciamento de incidentes, problemas, mudanças e capacidades.</p>
+            
+            <h3>5. Gerenciamento de continuidade</h3>
+            <p>O gerenciamento de continuidade é a quinta e última fase do ALM. Nela, o foco está na descontinuação da aplicação. Isso inclui o planejamento da descontinuação, a migração de dados e o arquivamento.</p>
+            
+            <div class="image-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNjAwIDMwMCI+PHBvbHlnb24gcG9pbnRzPSIxMDAsNTAgMjAwLDUwIDE1MCwxMDAiIGZpbGw9IiMzNDk4ZGIiIHN0cm9rZT0iIzJjM2U1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTUwIiB5PSI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QbGFuZWphbWVudG88L3RleHQ+PHBvbHlnb24gcG9pbnRzPSIyMDAsNTAgMzAwLDUwIDI1MCwxMDAiIGZpbGw9IiMzNDk4ZGIiIHN0cm9rZT0iIzJjM2U1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMjUwIiB5PSI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5EZXNlbmhvbHZpbWVudG88L3RleHQ+PHBvbHlnb24gcG9pbnRzPSIzMDAsNTAgNDAwLDUwIDM1MCwxMDAiIGZpbGw9IiMzNDk4ZGIiIHN0cm9rZT0iIzJjM2U1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMzUwIiB5PSI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UZXN0ZXM8L3RleHQ+PHBvbHlnb24gcG9pbnRzPSI0MDAsNTAgNTAwLDUwIDQ1MCwxMDAiIGZpbGw9IiMzNDk4ZGIiIHN0cm9rZT0iIzJjM2U1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNDUwIiB5PSI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5JbXBsYW50YcOnw6NvPC90ZXh0Pjxwb2x5Z29uIHBvaW50cz0iNTAwLDUwIDYwMCw1MCA1NTAsMTAwIiBmaWxsPSIjMzQ5OGRiIiBzdHJva2U9IiMyYzNlNTAiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjU1MCIgeT0iODAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+TWFudXRlbsOnw6NvPC90ZXh0Pjwvc3ZnPg==" alt="Etapas do ALM">
+                <div class="image-caption">Fases do ciclo de vida de aplicações</div>
+            </div>
+            
+            <p>O ALM é um processo contínuo que se repete a cada nova versão da aplicação. Ele ajuda você a gerenciar o ciclo de vida da aplicação de forma eficiente e eficaz, desde a concepção até a descontinuação.</p>
+            <p>O ALM é uma abordagem holística para o gerenciamento do ciclo de vida de aplicações. Ele integra as pessoas, os processos e as ferramentas necessárias para gerenciar o ciclo de vida da aplicação de forma eficiente e eficaz.</p>
+            <div class="page-number">Páginas 19-21</div>
+        </section>
+
+        <section id="pilares-alm">
+            <h2>OS PILARES DO ALM</h2>
+            
+            <h3>Governança</h3>
+            <p>A governança é o primeiro pilar do ALM. Ela define as políticas, os processos e as diretrizes para o gerenciamento do ciclo de vida da aplicação. A governança ajuda você a garantir que as aplicações estejam alinhadas com as necessidades do negócio e que sejam gerenciadas de forma consistente e controlada.</p>
+            
+            <h3>Desenvolvimento</h3>
+            <p>O desenvolvimento é o segundo pilar do ALM. Ele inclui todas as atividades relacionadas à criação da aplicação, desde a concepção até a implantação. O desenvolvimento ajuda você a garantir que a aplicação seja criada de forma eficiente e eficaz, atendendo aos requisitos do negócio.</p>
+            
+            <h3>Operações</h3>
+            <p>As operações são o terceiro pilar do ALM. Elas incluem todas as atividades relacionadas à manutenção da aplicação em produção. As operações ajudam você a garantir que a aplicação esteja disponível, segura e performática.</p>
+            
+            <h3>Gerenciamento de ciclo de vida</h3>
+            <p>O gerenciamento de ciclo de vida é o quarto pilar do ALM. Ele inclui todas as atividades relacionadas ao gerenciamento do ciclo de vida da aplicação, desde a concepção até a descontinuação. O gerenciamento de ciclo de vida ajuda você a garantir que a aplicação seja gerenciada de forma eficiente e eficaz ao longo do tempo.</p>
+            
+            <div class="highlight-box">
+                <p>Esses quatro pilares são interdependentes e devem ser gerenciados de forma integrada. A governança define as diretrizes para o desenvolvimento e as operações. O desenvolvimento cria a aplicação que será operada. As operações mantêm a aplicação em produção. O gerenciamento de ciclo de vida garante que a aplicação seja gerenciada de forma eficiente e eficaz ao longo do tempo.</p>
+            </div>
+            
+            <p>O ALM é uma abordagem holística para o gerenciamento do ciclo de vida de aplicações. Ele integra os quatro pilares para garantir que as aplicações estejam alinhadas com as necessidades do negócio e que sejam gerenciadas de forma consistente e controlada.</p>
+            <div class="page-number">Página 22</div>
+        </section>
+
+        <section id="modelos-ciclo-vida">
+            <h2>OS MODELOS DE CICLO DE VIDA DO SOFTWARE</h2>
+            
+            <h3>Cascata (Waterfall)</h3>
+            <p>O modelo em cascata é um dos modelos mais antigos e tradicionais de desenvolvimento de software. Ele é linear e sequencial, com cada fase do desenvolvimento sendo concluída antes que a próxima comece. As fases típicas incluem requisitos, design, implementação, teste e manutenção.</p>
+            <p>Vantagens: Simples e fácil de entender; bom para projetos com requisitos bem definidos e estáveis.</p>
+            <p>Desvantagens: Pouca flexibilidade para mudanças; os erros são frequentemente detectados apenas nas fases finais; não é adequado para projetos complexos ou com requisitos que podem mudar.</p>
+            
+            <h3>Iterativo e Incremental</h3>
+            <p>Este modelo divide o projeto em pequenos pedaços (iterações). Cada iteração passa por todas as fases do ciclo de vida do software, resultando em um incremento do produto. O produto é construído gradualmente através de várias iterações.</p>
+            <p>Vantagens: Permite feedback early; mais flexível que o modelo em cascata; os riscos são gerenciados melhor.</p>
+            <p>Desvantagens: Pode ser mais complexo de gerenciar; requer mais planejamento e acompanhamento.</p>
+            
+            <h3>Espiral</h3>
+            <p>O modelo espiral combina elementos do modelo em cascata e do modelo iterativo, com um forte foco na análise de riscos. O projeto passa por quatro fases repetidamente: planejamento, análise de risco, desenvolvimento e avaliação.</p>
+            <p>Vantagens: Bom para projetos de grande porte e de alto risco; incorpora a gestão de riscos diretamente no ciclo de vida.</p>
+            <p>Desvantagens: Complexo e caro; não é adequado para projetos pequenos ou de baixo risco.</p>
+            
+            <h3>V-Model</h3>
+            <p>O V-Model é uma extensão do modelo em cascata onde para cada fase de desenvolvimento há uma fase de teste correspondente. As fases de verificação (lado esquerdo do V) incluem requisitos, design e implementação, enquanto as fases de validação (lado direito) incluem testes correspondentes.</p>
+            <p>Vantagens: Ênfase nos testes desde o início; bom para projetos onde a qualidade é crítica.</p>
+            <p>Desvantagens: Pouca flexibilidade; não é adequado para projetos com requisitos incertos.</p>
+            
+            <h3>Ágil</h3>
+            <p>As metodologias ágeis (como Scrum, XP, Kanban) enfatizam a entrega iterativa e incremental, a colaboração próxima com o cliente e a capacidade de responder rapidamente a mudanças. O trabalho é dividido em pequenos incrementos com ciclos curtos (sprints).</p>
+            <p>Vantagens: Altamente adaptável a mudanças; entrega frequente de valor; melhoria contínua através do feedback.</p>
+            <p>Desvantagens: Pode ser desafiador para projetos com requisitos rigorosos de documentação; requer clientes envolvidos e equipes experientes.</p>
+            
+            <h3>DevOps</h3>
+            <p>DevOps não é estritamente um modelo de ciclo de vida, mas uma cultura e conjunto de práticas que visam unificar o desenvolvimento de software (Dev) e as operações de TI (Ops). Ele enfatiza a automação, a colaboração e a entrega contínua.</p>
+            <p>Vantagens: Entrega mais rápida e frequente; maior qualidade e estabilidade; melhor colaboração entre equipes.</p>
+            <p>Desvantagens: Requer mudanças culturais significativas; pode ser complexo implementar todas as práticas e ferramentas.</p>
+            
+            <div class="highlight-box">
+                <p>A escolha do modelo de ciclo de vida depende de vários fatores, como o tamanho e a complexidade do projeto, a clareza dos requisitos, a experiência da equipe, os prazos e o orçamento. Muitas organizações hoje adotam abordagens híbridas ou personalizadas que combinam elementos de diferentes modelos.</p>
+            </div>
+            <div class="page-number">Páginas 23-26</div>
+        </section>
+
+        <section id="consideracoes-finais">
+            <h2>CONSIDERAÇÕES FINAIS</h2>
+            <p>O DevOps e o ALM são duas abordagens complementares que, quando implementadas em conjunto, podem transformar a maneira como as organizações desenvolvem, implantam e gerenciam aplicações. O DevOps foca na quebra de silos entre desenvolvimento e operações, promovendo colaboração, automação e entrega contínua. Já o ALM fornece uma estrutura abrangente para gerenciar todo o ciclo de vida da aplicação, desde a concepção até a descontinuação.</p>
+            <p>A adoção dessas práticas não é apenas uma questão de implementar novas ferramentas, mas sim de promover uma mudança cultural significativa na organização. Requer comprometimento de todos os níveis, desde a liderança até os profissionais técnicos, e uma vontade de desafiar processos estabelecidos e abraçar novas formas de trabalhar.</p>
+            <p>Os benefícios, no entanto, são substanciais: entregas mais rápidas e frequentes, maior qualidade e estabilidade das aplicações, melhor alinhamento com as necessidades do negócio e maior satisfação tanto dos clientes quanto das equipes de desenvolvimento e operações.</p>
+            <p>À medida que o mercado continua a evoluir e a demanda por software acelera, as organizações que adotarem essas práticas estarão melhor posicionadas para competir e prosperar no cenário digital atual.</p>
+            <div class="page-number">Página 27</div>
+        </section>
+
+        <section class="references">
+            <h2>REFERÊNCIAS</h2>
+            <ul>
+                <li>BASS, Len; WEBER, Ingo; ZHU, Liming. DevOps: A Software Architect's Perspective. Addison-Wesley Professional, 2015.</li>
+                <li>HUTTERMANN, Michael. Application Lifecycle Management. In: Business Computing. Springer Vieweg, Wiesbaden, 2015.</li>
+                <li>KIM, Gene; BEHR, Kevin; SPAFFORD, George. The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win. IT Revolution Press, 2013.</li>
+                <li>FITZGERALD, Brian; STOL, Klaas-Jan. Continuous software engineering: A roadmap and agenda. Journal of Systems and Software, v. 123, p. 176-189, 2017.</li>
+                <li>LEITE, L.; RAMOS, R.; MESQUITA, D.; et al. A systematic literature review of DevOps and its implications for the software industry. In: Proceedings of the 30th Brazilian Symposium on Software Engineering. 2016.</li>
+                <li>WETTINGER, Johannes; ANDRIKOPOULOS, Vasilios; LEYMANN, Frank. Automated capturing and systematic usage of DevOps knowledge for cloud applications. In: 2015 IEEE International Conference on Cloud Engineering. IEEE, 2015.</li>
+            </ul>
+            <div class="page-number">Página 28</div>
+        </section>
+    </div>
+</body>
+</html>
