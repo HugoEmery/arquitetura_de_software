@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise, Projeto e Avaliação de Arquitetura de Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ANÁLISE, PROJETO E AVALIAÇÃO DE ARQUITETURA DE SOFTWARE</h1>
+        </header>
+        <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html" class="active"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+        <section id="nossa-historia">
+            <h2>NOSSA HISTÓRIA</h2>
+            <p>A nossa história inicia com a realização do sonho de um grupo de empresários, em atender à crescente demanda de alunos para cursos de Graduação e Pós-Graduação. Com isso foi criado a nossa instituição, como entidade oferecendo serviços educacionais em nível superior.</p>
+            <p>A instituição tem por objetivo formar diplomados nas diferentes áreas de conhecimento, aptos para a inserção em setores profissionais e para a participação no desenvolvimento da sociedade brasileira, e colaborar na sua formação contínua. Além de promover a divulgação de conhecimentos culturais, científicos e técnicos que constituem patrimônio da humanidade e comunicar o saber através do ensino, de publicação ou outras normas de comunicação.</p>
+            <p>A nossa missão é oferecer qualidade em conhecimento e cultura de forma confiável e eficiente para que o aluno tenha oportunidade de construir uma base profissional e ética. Dessa forma, conquistando o espaço de uma das instituições modelo no país na oferta de cursos, primando sempre pela inovação tecnológica, excelência no atendimento e valor do serviço oferecido.</p>
+            <div class="page-number">Página 2</div>
+        </section>
+
+        <section class="summary">
+            <h2>Sumário</h2>
+            <ul>
+                <li>INTRODUÇÃO ...... 4</li>
+                <li>PARA QUE SERVE A ARQUITETURA DE SOFTWARE E COMO ELA AJUDA OS NEGÓCIOS? ...... 6</li>
+                <li>DESENVOLVIMENTO DE SISTEMA DE SOFTWARE ...... 7</li>
+                <li>APLICANDO A ARQUITETURA DE SOFTWARE NOS NEGÓCIOS ...... 8</li>
+                <li>ANÁLISE DE ARQUITETURA DE SOFTWARE ...... 10</li>
+                <li>PROPRIEDADES DA ARQUITETURA DE SOFTWARE ...... 12</li>
+                <li>MÉTODO DE ANÁLISE DE ARQUITETURA DE SOFTWARE ...... 14</li>
+                <li>USO DE ATRIBUTOS DE QUALIDADE NA ANÁLISE ARQUITETURIAL ...... 16</li>
+                <li>A ESCOLHA DO MODELO ARQUITETURIAL PARA UM SOFTWARE ...... 19</li>
+                <li>AVALIAÇÃO DA ARQUITETURA DE SOFTWARE ...... 21</li>
+                <li>O FUTURO DA ARQUITETURA DE SOFTWARE ...... 23</li>
+                <li>CONSIDERAÇÕES FINAIS ...... 25</li>
+                <li>REFERÊNCIAS ...... 26</li>
+            </ul>
+            <div class="page-number">Página 3</div>
+        </section>
+
+        <section id="introducao">
+            <h2>INTRODUÇÃO</h2>
+            <p>Todos os dias usamos diferentes aplicativos, ferramentas e sistemas online, seja no desktop ou celular. Isso não é segredo para ninguém. O que muitos desconhecem é que por trás de um aplicativo há uma grande estrutura organizacional desenvolvida pela arquitetura de software.</p>
+            <p>Esta área da TI é responsável pela análise estratégica dos componentes operacionais antes de criar soluções viáveis para uma tecnologia, considerando o desempenho, escalabilidade, interoperabilidade, compatibilidade e performance.</p>
+            <p>A qualidade do software, assunto estudado pela área de Engenharia de software, está cada vez mais sendo procurada por essas empresas com o intuito de valorizar os seus produtos e serviços no mercado de software [GRUNSKE et all 2002]. A qualidade é uma característica importante, pois ela ajuda a garantir a satisfação do cliente fazendo com que este procure a empresa mais vezes. Além disso, a produção de produtos com qualidade reduz o custo da empresa no momento da manutenção do software.</p>
+            <p>Existem grandes estudos sendo executados nesta área, porém muitos pontos ainda não foram esclarecidos ou avaliados. Uma das grandes dificuldades para a avaliação da qualidade do produto de software é que grande parte dos testes só pode ser executada após a finalização do software. Isto significa um alto custo e um grande esforço de mudança caso a qualidade desejada não seja atingida.</p>
+            <p>Para evitar estas situações, cada vez mais estão surgindo metodologias e técnicas que auxiliam tanto no processo de desenvolvimento do software como também para a avaliação dos artefatos gerados. Baseando-se nesta idéia, foram criados vários trabalhos para avaliar a qualidade do produto de software através do estudo de sua arquitetura.</p>
+            
+            <div class="highlight-box">
+                <p>Através da arquitetura do sistema, é possível prever alguns dos possíveis comportamentos do software antes de sua conclusão, além de poderem ser observadas características importantes como coesão, que influencia na manutenção do produto.</p>
+            </div>
+            
+            <p>A arquitetura é basicamente definida por requisitos não funcionais [BACHMANN et all 2005]. Por isso, ela é capaz de responder sobre o comportamento final do software relacionado às características como escalabilidade, segurança, manutenibilidade e desempenho [BENGTSSON 1998] [BENGTSSON et all 2001] [MENDES 2002], sendo inclusive considerada a chave para atingir as exigências desses requisitos [BARBACCI et all 2003] [BARBACCI et all 2005]. Utilizando-se deste fato uma avaliação qualitativa da arquitetura pode prever problemas no software antes dele ser finalizado. Isto diminuiría o custo para adequar o sistema aos padrões de qualidade.</p>
+            <div class="page-number">Páginas 4-5</div>
+        </section>
+
+        <section id="arquitetura-negocios">
+            <h2>PARA QUE SERVE A ARQUITETURA DE SOFTWARE E COMO ELA AJUDA OS NEGÓCIOS?</h2>
+            <p>A arquitetura de software de um sistema serve para definir a organização das funcionalidades desse sistema e propriedades ou requisitos não funcionais suportados pelo mesmo. Características peculiares da arquitetura determinarão quais propriedades serão preponderantes. A necessidade da arquitetura de software prover suporte a um conjunto de requisitos, geralmente conflitantes, requer que uma análise arquitetural seja realizada, tema tratado neste artigo.</p>
+            <p>Com a arquitetura de software, é possível entender as diferenças entre as linguagens, sistemas operacionais e ambientes da computação. Ou seja, qualquer componente tecnológico pode ser usado para integrar uma solução arquitetural. Essa parte é essencial porque otimiza o trabalho dos designers e desenvolvedores, permitindo que uma aplicação esteja dentro dos padrões básicos necessários para funcionar de forma assertiva.</p>
+            <p>O professor de Arquitetura de Software do IGTI Rafael Lobato explica que a área é importante para automatizar novos processos ou melhorar os já existentes. Assim, os projetos desenvolvidos pelo arquiteto de software acabam diminuindo os riscos associados ao sistema. "Em poucas palavras, as tecnologias concretizam um software de modo funcional e adequado para resolver a solução de um negócio", completa.</p>
+            <p>Além da escolha dos algoritmos e estruturas de dados, a arquitetura envolve: decisões sobre as estruturas que formarão o sistema, controle, protocolos de comunicação, sincronização e acesso a dados, atribuição de funcionalidade a elementos do sistema, distribuição física dos elementos escalabilidade e desempenho e outros atributos de qualidade.</p>
+            <div class="page-number">Página 6</div>
+        </section>
+
+        <section id="desenvolvimento-software">
+            <h2>DESENVOLVIMENTO DE SISTEMA DE SOFTWARE</h2>
+            <p>O processo de desenvolvimento de sistemas de software, similarmente a outros sistemas, compreende três fases genéricas – definição, desenvolvimento e manutenção – conforme ilustrado abaixo.</p>
+            
+            <div class="image-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNjAwIDIwMCI+PHJlY3QgeD0iNTAiIHk9IjcwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMmMzZTUwIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjEyNSIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRlZmluaWnDp8OjbzwvdGV4dD48cmVjdCB4PSIyMjUiIHk9IjcwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMmMzZTUwIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjMwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkRlc2Vudm9sdmltZW50bzwvdGV4dD48cmVjdCB4PSI0MDAiIHk9IjcwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMmMzZTUwIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjQ3NSIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1hbnV0ZW7Dp8OjbzwvdGV4dD48cG9seWxpbmUgcG9pbnRzPSIyMDAsMTAwIDIyNSwxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBvbHlsaW5lIHBvaW50cz0iMzc1LDEwMCA0MDAsMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxwb2x5Z29uIHBvaW50cz0iMjAwLDEwMCAxOTUsOTUgMjAwLDEwMCAxOTUsMTA1IiBmaWxsPSIjMzMzIi8+PHBvbHlnb24gcG9pbnRzPSIzNzUsMTAwIDM4MCw5NSAzNzUsMTAwIDM4MCwxMDUiIGZpbGw9IiMzMzMiLz48L3N2Zz4=" alt="Fases do desenvolvimento de software">
+                <div class="image-caption">Fonte: https://www.devmedia.com.br/artigo-engenharia-de-software-14-analise-da-arquitetura-de-software/13254</div>
+            </div>
+            
+            <p>A fase de definição engloba a identificação de informações que deveriam ser processadas, funções e desempenho desejados, tipo de interface a ser utilizada, tarefas que o sistema deveria prover suporte, perfil de usuários do sistema, dentre outras.</p>
+            <p>A fase de desenvolvimento concentra-se no projeto de estruturas de dados e arquitetura de software do sistema, conversão do projeto para alguma linguagem de programação, realização de testes e avaliação. Finalmente, a manutenção considera modificações e/ou correções necessárias no sistema a fim de que este atenda aos requisitos do usuário. Perceba que o processso de desenvolvimento de um sistema de software tem duas grandes atividades de interesse: o desenvolvimento da porção de software que implementa as funcionalidades do sistema, e a atividade que a antecede e norteia o desenvolvimento, que é o projeto da arquitetura de software. Essa última atividade é resultado da análise arquitetural que provê informações para decisões arquiteturais.</p>
+            <div class="page-number">Página 7</div>
+        </section>
+
+        <section id="aplicando-negocios">
+            <h2>APLICANDO A ARQUITETURA DE SOFTWARE NOS NEGÓCIOS</h2>
+            <p>Para as empresas, a arquitetura de software tem o objetivo de atender uma visão orientada aos negócios. Pensando nisso, os profissionais são encarregados pela estrutura de um sistema, planejamento estratégico, padrões de projetos arquiteturais, otimização e escalabilidade do negócio e construção de soluções para aplicações.</p>
+            <p>"O arquiteto deve ter sempre o senso crítico de avaliar novas formas de aplicar estas tecnologias ou até de sugerir algo que nunca antes tenha sido utilizado", diz Lobato. O que na prática é a criação ou seleção dos componentes e interações fundamentais para que a tecnologia seja implantada. Assim, por trás de toda a tecnologia, há uma representação de informação adequada às necessidades dos consumidores ou colaboradores.</p>
+            
+            <h3>Principais benefícios da arquitetura de software:</h3>
+            <ul>
+                <li>Redução de riscos ao negócio</li>
+                <li>Alinhamento de expectativas entre os diferentes setores da empresa</li>
+                <li>Construção de aplicações flexíveis e de qualidade</li>
+                <li>Integração com diferentes linguagens e sistemas</li>
+                <li>Segurança das aplicações</li>
+            </ul>
+            
+            <p>Diferentemente de algumas áreas, a arquitetura de software é indispensável nas empresas, principalmente àquelas que têm a tecnologia como premissa no modelo de negócio. Exemplo disso são marcas como o NuBank, Facebook, Uber, Slack e até os Correios, que criam diversas soluções com base no desenvolvimento ágil, transformação digital e arquiteturas escaláveis.</p>
+            <p>Normalmente, essas companhias buscam por uma modelagem específica, combinando componentes com base em uma visão arquitetural que mais se adeque ao software. Para isso acontecer, os arquitetos avaliam todas as opções de implementação de um sistema.</p>
+            <p>Para os profissionais do ramo, essa parte é conhecida como visões da arquitetura, porque permitem uma análise geral do sistema e, a partir daí, selecionam as estruturas dos conjuntos que farão parte do processo para o melhor funcionamento da aplicação.</p>
+            <div class="page-number">Páginas 8-9</div>
+        </section>
+
+        <section id="analise-arquitetura">
+            <h2>ANÁLISE DE ARQUITETURA DE SOFTWARE</h2>
+            <p>O projeto da arquitetura de software é uma etapa essencial no desenvolvimento de sistemas de software de grande porte. Dentro deste contexto, a arquitetura de software é fundamental para o desenvolvimento de software onde se tem funcionalidades distintas, sendo concebidas a partir da mesma arquitetura base. Entretanto, antecedendo a etapa de projeto da arquitetura de software, há a necessidade de fazer o levantamento dos requisitos do sistema.</p>
+            
+            <h3>Atividades da análise e projeto de um sistema:</h3>
+            <ul>
+                <li><strong>Desenvolvimento de modelo arquitetural</strong> – Os dados são coletados durante a elicitação de requisitos a fim de serem analisados e incorporados ao modelo arquitetural (isto é, o produto resultante). Neste caso, o modelo passa a ser o elemento central da análise.</li>
+                <li><strong>Melhoria e síntese de uma solução</strong> – Incrementam-se as informações descritas no modelo arquitetural (inicial)</li>
+                <li><strong>Análise da solução</strong> – A análise da solução é realizada em termos do modelo arquitetural que se tem em mãos, podendo identificar a necessidade de refinar o modelo.</li>
+            </ul>
+            
+            <p>Perceba que o modelo arquitetural pode ser considerado como um 'esboço' inicial da arquitetura de software do sistema em desenvolvimento. É importante ainda observar que a análise de uma arquitetura de software é um processo iterativo no qual são feitos refinamento de um modelo arquitetural inicial, derivado a partir de um conjunto de requisitos arquiteturais. Em cada iteração, uma mini análise ocorre, refinando a arquitetura proposta inicialmente.</p>
+            
+            <div class="highlight-box">
+                <p>Entretanto, note que não é tarefa fácil validar uma arquitetura de software quanto ao suporte que oferece a um conjunto de requisitos. É muitas vezes difícil associar novas arquiteturas a atributos de qualidade. Observa-se, geralmente, que os desenvolvedores concentram-se nos aspectos funcionais das arquiteturas. Assim, o principal propósito da análise arquitetural é verificar se os requisitos arquiteturais têm sido levados em conta durante o desenvolvimento de um sistema de software.</p>
+            </div>
+            <div class="page-number">Páginas 10-11</div>
+        </section>
+
+        <section id="propriedades-arquitetura">
+            <h2>PROPRIEDADES DA ARQUITETURA DE SOFTWARE</h2>
+            <p>A arquitetura de software é uma parte essencial de um sistema de software complexo. Com a crescente complexidade de sistemas de software, a especificação global do sistema, ou seja, sua arquitetura passa a ser um aspecto de maior significado quando comparado à escolha de algoritmos ou estruturas de dados.</p>
+            <p>Um sistema possui um conjunto de requisitos arquiteturais, envolvendo atributos de qualidade (ou requisitos não funcionais) e atributos de projeto. Esses requisitos constituem propriedades desejadas ou apresentadas por uma arquitetura de software. Dentre esses requisitos, uma arquitetura de software apresenta propriedades importantes que podem ser vistas como intrínsecas a ela. Tais propriedades são: eficiência, integridade e flexibilidade.</p>
+            
+            <h3>Eficiência</h3>
+            <p>Pode ser descrita como a quantidade de recursos computacionais necessários para que um programa realize suas funções. Esses recursos computacionais podem ser vistos em termos da capacidade de armazenamento e processamento. Um dos principais requisitos associados à eficiência é o desempenho. O desempenho é um requisito não funcional essencial para um sistema de software e constitui num enorme desafio.</p>
+            <p>Lidar com tal requisito durante o desenvolvimento de um sistema. Por exemplo, seria possível ter os seguintes requisitos de desempenho quando do desenvolvimento de um sistema de software para administração de cartões de crédito:</p>
+            <ul>
+                <li>Obter um bom tempo de resposta para autorização de vendas com cartão de crédito. O termo bom poderia ser traduzido em 7 segundos.</li>
+                <li>Obter um bom uso de memória para armazenar as informações de um cliente. Poderia ser especificado o máximo de 10 Kb para armazenar as informações de cada cliente.</li>
+            </ul>
+            <p>A eficiência é uma propriedade de suma importância nas decisões de projeto e tem forte influência na análise arquitetural de um sistema. Perceba que a forma na qual os componentes de uma arquitetura encontram-se distribuídos, bem como os mecanismos de comunicação entre eles, são determinantes do desempenho e, portanto, da eficiência do sistema.</p>
+            
+            <h3>Integridade</h3>
+            <p>Essa propriedade, às vezes, atua em conflito com outros requisitos do sistema, exigindo que compromissos sejam assumidos em termos de custo e desempenho de um sistema de software. Outra importante propriedade é a integridade. Aqui, a noção de integridade refere-se à integridade em termos da unificação do projeto em níveis distintos. A arquitetura de software descreve a organização de um sistema de software num nível mais elevado, objetivando a unificação do projeto, ou seja, serve de referência para o projeto.</p>
+            
+            <h3>Flexibilidade</h3>
+            <p>Complementando, outra importante propriedade é a flexibilidade, que diz respeito ao esforço exigido para modificar um sistema de software. Em outras palavras, é a facilidade com a qual um sistema de software pode ser estendido a fim de dar suporte a uma ou mais funcionalidade(s) adicionada(s).</p>
+            <p>Por exemplo, a criação de interfaces adicionais aumenta flexibilidade, incrementando a facilidade de fazer modificações, uma vez que as interfaces separam partes distintas de funcionalidade em componentes de software diferentes.</p>
+            <div class="page-number">Páginas 12-13</div>
+        </section>
+
+        <section id="metodo-analise">
+            <h2>MÉTODO DE ANÁLISE DE ARQUITETURA DE SOFTWARE</h2>
+            <p>Um exemplo de método de análise de arquitetura de software, denominado SAAM (Software Architecture Analysis Method), foi inicialmente concebido com o objetivo de auxiliar arquitetos de software a compararem soluções arquiteturais, tendo sido o precursor de outros métodos de análise arquitetural. O método SAAM compreende os seguintes objetivos:</p>
+            
+            <ul>
+                <li>Definir um conjunto de cenários que representem usos importantes do sistema no domínio, envolvendo os pontos de vista de todos aqueles que possuem papéis influenciadores no sistema.</li>
+                <li>Utilizar cenários para gerar uma partição funcional do domínio, uma ordenação parcial das funções e um acoplamento dos cenários às várias funções existentes na partição.</li>
+                <li>Usar a partição funcional e ordenação parcial, juntamente com cenários de uso, a fim de realizar a análise das arquiteturas propostas.</li>
+            </ul>
+            
+            <p>Assim, para cada cenário, a análise fornece uma pontuação das arquiteturas que estão sendo avaliadas, denominadas de arquiteturas candidatas. Recai, portanto, sobre o avaliador a responsabilidade de determinar os pesos dos cenários considerados, bem como a pontuação global das arquiteturas candidatas.</p>
+            <p>O método de análise arquitetural SAAM é baseado no uso de cenários. Fazendo uso de cenários, um analista pode usar uma descrição de arquitetura de software para avaliar o potencial do sistema de software prover suporte a atributos de qualidade ou requisitos não funcionais. Entretanto, é importante observar que avaliar uma arquitetura de software para determinar se ela oferece suporte a requisitos não funcionais não é tarefa fácil. Tais requisitos tendem a serem um tanto vagos.</p>
+            
+            <div class="highlight-box">
+                <p>Objetivando realizar a análise, portanto, torna-se necessário considerar o contexto no qual o sistema de software encontra-se inserido, bem como considerar as circunstâncias específicas àquele contexto. Uma forma de atingir esse objetivo é fazendo uso de cenários a fim de entender e avaliar se uma arquitetura oferece suporte ou não a um específico requisito não funcional, e sob quais circunstâncias.</p>
+            </div>
+            
+            <p>SAAM compreende um conjunto de cinco passos que possuem interdependências entre si, conforme ilustra a figura abaixo.</p>
+
+            <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Curso</h3>
+                <p>O curso de Arquitetura de Software oferece uma formação completa e atualizada, preparando profissionais para os desafios do mercado de tecnologia.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 1234</p>
+                <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                <p><i class="fas fa-envelope"></i> contato@arqsoft.com.br</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="detalhes.html">Detalhes do Curso</a></li>
+                    <li><a href="bd.html">Big Data</a></li>
+                    <li><a href="etica.html">Ética</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Curso de Arquitetura de Software. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Script específico para a página de Ética
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegação por abas
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remover classe active de todas as abas e seções
+                    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                    
+                    // Adicionar classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostrar a seção correspondente
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Animação de entrada dos elementos
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(function() {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
