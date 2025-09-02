@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquitetura Orientada a Serviços e Microsserviços, Computação em Nuvem e Mobile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">    
+</head>
+    <style>
+       
+    </style>
+</head>
+<body>
+     <!-- Header -->
+    <header>
+        <div class="header-graphic"></div>
+        <div class="header-content">
+            <h1>Banco de Dados e Arquitetura para Big Data</h1>
+            <p>Conceitos fundamentais e aplicações práticas em arquitetura de software</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html" class="active"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Professores</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <header>
+            <h1>ARQUITETURA ORIENTADA A SERVIÇOS E MICROSSERVIÇOS, COMPUTAÇÃO EM NUVEM E MOBILE</h1>
+        </header>
+
+        <section id="nossa-historia">
+            <h2>NOSSA HISTÓRIA</h2>
+            <p>A nossa história inicia com a realização do sonho de um grupo de empresários, em atender à crescente demanda de alunos para cursos de Graduação e Pós-Graduação. Com isso foi criado a nossa instituição, como entidade oferecendo serviços educacionais em nível superior.</p>
+            <p>A instituição tem por objetivo formar diplomados nas diferentes áreas de conhecimento, aptos para a inserção em setores profissionais e para a participação no desenvolvimento da sociedade brasileira, e colaborar na sua formação contínua. Além de promover a divulgação de conhecimentos culturais, científicos e técnicos que constituem patrimônio da humanidade e comunicar o saber através do ensino, de publicação ou outras normas de comunicação.</p>
+            <p>A nossa missão é oferecer qualidade em conhecimento e cultura de forma confiável e eficiente para que o aluno tenha oportunidade de construir uma base profissional e ética. Dessa forma, conquistando o espaço de uma das instituições modelo no país na oferta de cursos, primando sempre pela inovação tecnológica, excelência no atendimento e valor do serviço oferecido.</p>
+            <div class="page-number">Página 2</div>
+        </section>
+
+        <section class="summary">
+            <h2>Sumário</h2>
+            <ul>
+                <li>INTRODUÇÃO ...... 4</li>
+                <li>O QUE É SOA? ...... 6</li>
+                <li>ARQUITETURA ORIENTADA A SERVIÇOS (SOA) PARA AUTOMAÇÃO INDUSTRIAL ...... 8</li>
+                <li>O QUE É ARQUITETURA DE MICROSSERVIÇOS? ...... 11</li>
+                <li>PRINCÍPIOS DOS MICROSSERVIÇOS ...... 13</li>
+                <li>BENEFÍCIOS DE MICROSSERVIÇOS ...... 15</li>
+                <li>TECNOLOGIA POLIGLOTA ...... 16</li>
+                <li>MONITORAMENTO DE SERVIÇOS ...... 17</li>
+                <li>COMPUTAÇÃO EM NUVEM E MOBILE ...... 19</li>
+                <li>CONCLUSÃO ...... 24</li>
+                <li>REFERÊNCIAS ...... 25</li>
+            </ul>
+            <div class="page-number">Página 3</div>
+        </section>
+
+        <section id="introducao">
+            <h2>INTRODUÇÃO</h2>
+            <p>Quando estamos lidando com aplicações a nível empresarial, é muito comum ouvirmos sobre uns tais de Serviços SOA. É comum até mesmo ouvirmos os termos "barramento SOA" ou "fachada SOA". E tudo isso dentro do que geralmente chamam de "arquitetura SOA". Mas, o que é tudo isso? Será que estamos falando simplesmente de web services?</p>
+            <p>Conforme as tecnologias e práticas de negócios em torno de BPM, SOA e Web 2.0 vão amadurecendo, cada vez mais organizações as adotam, tanto individual quanto coletivamente. Como resultado, mudanças fundamentais surgiram na maneira como as partes envolvidas de TI e negócios trabalham juntas.</p>
+            <p>Embora as oportunidades que isso apresenta sejam enormes, os riscos são equivalentes: segurança, ineficiência, interrupções e um possível desalinhamento organizacional.</p>
+            <p>Para ajudá-lo em sua avaliação dessas tecnologias e dos benefícios que elas oferecem (inclusive para iniciativas executivas como Lean-Six Sigma, gerência de portfólio e transformação da aquisição, bem como soluções com foco em missões em áreas como inteligência, defesa e logística), este white paper avalia os benefícios e os riscos dessas soluções e apresenta perspectivas e estudos de caso do mundo real como elementos de base para sua análise.</p>
+            <p>Os desafios enfrentados pelas empresas e órgãos governamentais da atualidade são muitos e variados. Para se manterem atualizadas, essas organizações precisam não só promover uma mudança de dentro, mas também ser suficientemente ágeis para se adaptarem rapidamente à evolução dos mercados, políticas, regulamentações e modelos de negócios.</p>
+            
+            <div class="highlight-box">
+                <p>Felizmente para elas, a convergência de um trio de tecnologias e práticas de negócios – gestão de processos de negócios (BPM), arquitetura orientada a serviços (SOA) e Web 2.0 – está fornecendo uma solução.</p>
+            </div>
+            
+            <div class="page-number">Páginas 4-5</div>
+        </section>
+
+        <section id="o-que-e-soa">
+            <h2>O QUE É SOA?</h2>
+            <p>Arquitetura Orientada a Serviços é uma solução fundamentada onde geralmente possui uma arquitetura baseada em padrões para a criação de uma infraestrutura de TI, visando simplificar as relações entre sistemas distintos, aperfeiçoando seu funcionamento e facilitando a incorporação de novos elementos.</p>
+            <p>Sendo assim, caso haja mudanças nas necessidades do negócio, estes fatores permitem que a empresa responda a isso de forma rápida.</p>
+            <p>Essa exposição de regras de negócio é realizada basicamente através dos famosos web services, pois são eles que determinam os padrões e acabam especificando essa infraestrutura de TI que foi citada.</p>
+            <p>A vantagem de termos essa estrutura em uma organização é justamente a flexibilidade que os web services trazem.</p>
+            <p>Esse é exatamente o cenário perfeito para a utilização da arquitetura SOA, pois temos ativos de negócio envolvidos em um ambiente completamente heterogêneo. E todo mundo precisa conversar entre si.</p>
+            <p>Pensando em uma arquitetura voltada a serviços, nós poderíamos resolver isso de maneira muito fácil. Poderíamos criar uma web service chamado "IncluirCliente". Esta web service será responsável por fazer todas as validações do cliente antes de o inserir na base de dados. Assim, caberia aos demais softwares simplesmente consumir esse serviço da maneira adequada.</p>
+            
+            <div class="image-container">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3QgeD0iNTAiIHk9IjUwIiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0iI2Y1ZjVmNSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMDAiIHk9IjEwMCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2U4ZWNmZiIgc3Ryb2tlPSIjMzQ5OGRiIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxNzUiIHk9IjEzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CYXNlIGRlIGRhZG9zPC90ZXh0PjxyZWN0IHg9IjM1MCIgeT0iMTAwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZThlY2ZmIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjQyNSIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkJhcnJhbWVudG8gZGUgc2VydmnDp29zPC90ZXh0PjxyZWN0IHg9IjIyNSIgeT0iMTgwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZThlY2ZmIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjMwMCIgeT0iMjEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkluY2x1aXJDbGllbnRlPC90ZXh0PjxyZWN0IHg9IjEwMCIgeT0IyNTAgd2lkdGg9IjE1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2U4ZWNmZiIgc3Ryb2tlPSIjMzQ5OGRiIiBzdHJva2Utd2lkdGg9IjIiLz48dGV4dCB4PSIxNzUiIHk9IjI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjMzMzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Tb2Z0d2FyZSAxPC90ZXh0PjxyZWN0IHg9IjM1MCIgeT0iMjUwIiB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjZThlY2ZmIiBzdHJva2U9IiMzNDk4ZGIiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjQyNSIgeT0iMjgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZpbGw9IiMzMzMiIHRleHQtYW5jaG9yPSJtaWRkbGUiPlNvZnR3YXJlIDI8L3RleHQ+PHJlY3QgeD0iMjI1IiB5PSIzMDAiIHdpZHRoPSIxNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNlOGVjZmYiIHN0cm9rZT0iIzM0OThkYiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMzAwIiB5PSIzMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzMzMyIgdGV4dC1hbmNob3I9Im1pZGRsZSI+UmVncmFzIGRlIG5lZ8OzY2lvPC90ZXh0Pjxwb2x5bGluZSBwb2ludHM9IjEwMCwxMjUgMjI1LDE4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48cG9seWxpbmUgcG9pbnRzPSIzNTAsMTI1IDIyNSwxODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBvbHlsaW5lIHBvaW50cz0iMjI1LDIzMCAxMDAsMjc1IiBmaWxsPSJub25lIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPjxwb2x5bGluZSBwb2ludHM9IjIyNSwyMzAgMzUwLDI3NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz48cG9seWdvbiBwb2ludHM9IjEwMCwxMjUgOTUsMTIwIDEwMCwxMjUgOTUsMTMwIiBmaWxsPSIjMzMzIi8+PHBvbHlnb24gcG9pbnRzPSIzNTAsMTI1IDM0NSwxMjAgMzUwLDEyNSAzNDUsMTMwIiBmaWxsPSIjMzMzIi8+PHBvbHlnb24gcG9pbnRzPSIyMjUsMjMwIDIyMCwyMjUgMjI1LDIzMCAyMjAsMjM1IiBmaWxsPSIjMzMzIi8+PHBvbHlnb24gcG9pbnRzPSIyMjUsMjMwIDIyMCwyMjUgMjI1LDIzMCAyMjAsMjM1IiBmaWxsPSIjMzMzIi8+PC9zdmc+" alt="Esquema de regras de negócio">
+                <div class="image-caption">Fonte: https://www.treinaweb.com.br/blog/voce-sabe-o-que-e-arquitetura-orientada-a-servicos-soa</div>
+            </div>
+            
+            <p>Agora as coisas ficaram muito mais simples. Conseguimos centralizar o nosso ativo de negócio (no caso, o cliente e a sua inserção), garantindo que o fluxo de negócio dele sempre ocorra da maneira correta (temos certeza que o cliente sempre vai ser validado da maneira correta).</p>
+            <p>Por fim, garantimos extensibilidade pois, se quisermos um dia alterar a regra de negócio de validação do cliente ou mesmo acrescentar novas etapas do negócio, basta modificarmos o web service. Todos os softwares que consomem este web service serão automaticamente "atualizados". Esta é a arquitetura SOA!</p>
+            <div class="page-number">Páginas 6-7, 9</div>
+        </section>
+
+        <section id="soa-automacao-industrial">
+            <h2>ARQUITETURA ORIENTADA A SERVIÇOS (SOA) PARA AUTOMAÇÃO INDUSTRIAL</h2>
+            <p>Soluções baseadas em Ethernet Industrial permitem ao usuário a integração dos equipamentos industriais a serviços de TI fornecidos por servidores (DECOTIGNIE, 2005). Dessa forma, tornou-se possível disponibilizar informações provenientes dos sistemas de automação através de protocolos com suporte ao Ethernet TCP/IP em aplicações Web.</p>
+            <p>Essa interconexão de dados e infraestruturas de rede de TI e de automação de forma segura e confiável representa uma tendência para o desenvolvimento de soluções inovadoras e integradoras na área industrial com a IIoT e a Indústria 4.0 (LU, 2017).</p>
+            <p>Processos industriais, bem como muitas outras infraestruturas críticas dependem de sistemas SCADA e SDCD para executar suas funcionalidades complexas. A IIoT é complementar a esses sistemas, utilizando as informações provenientes dos sistemas SCADA e SDCD como fontes de dados. Sistemas SCADA tem foco em monitoramento e controle, enquanto a IIoT busca analisar os dados para aumentar a produtividade e eficiência (KULKARNI, 2016).</p>
+            <p>Colombo et al. (2014) discutem o conceito de uma arquitetura de automação baseada no uso da Computação em Nuvem e de serviços (Web Services) para comunicação e realização das tarefas entre os diferentes componentes e equipamentos de um sistema industrial. Os autores atestam que arquiteturas orientadas a serviço (SOA) são consideradas um caminho promissor para concepção do modelo de fábrica do futuro.</p>
+              <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre o Curso</h3>
+                <p>O curso de Arquitetura de Software oferece uma formação completa e atualizada, preparando profissionais para os desafios do mercado de tecnologia.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Tecnologia, 1234</p>
+                <p><i class="fas fa-phone"></i> (11) 3456-7890</p>
+                <p><i class="fas fa-envelope"></i> contato@arqsoft.com.br</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="detalhes.html">Detalhes do Curso</a></li>
+                    <li><a href="bd.html">Big Data</a></li>
+                    <li><a href="#">Professores</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Curso de Arquitetura de Software. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Script específico para a página de Big Data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navegação por abas
+            document.querySelectorAll('.content-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remover classe active de todas as abas e seções
+                    document.querySelectorAll('.content-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+                    
+                    // Adicionar classe active à aba clicada
+                    tab.classList.add('active');
+                    
+                    // Mostrar a seção correspondente
+                    const targetId = tab.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Barra de progresso
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+                
+                document.getElementById('progressBar').style.width = scrollPercent + '%';
+            });
+
+            // Marcar como concluído
+            document.getElementById('markCompleted').addEventListener('click', function() {
+                this.textContent = 'Estudo Concluído!';
+                this.classList.add('completed');
+                this.disabled = true;
+                
+                // Destacar visualmente as seções
+                document.querySelectorAll('.concept-card').forEach(card => {
+                    card.style.boxShadow = '0 4px 12px rgba(39, 174, 96, 0.3)';
+                    card.style.borderLeft = '5px solid var(--success-color)';
+                });
+                
+                alert('Parabéns! Você completou o estudo dos conceitos de Big Data!');
+            });
+
+            // Animação de entrada dos elementos
+            const animatedElements = document.querySelectorAll('.animate');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+            });
+            
+            setTimeout(function() {
+                animatedElements.forEach(element => {
+                    element.style.opacity = '1';
+                });
+            }, 100);
+        });
+    </script>
+    </body>
+</html>
