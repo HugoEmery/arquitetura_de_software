@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docência do Ensino Superior</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+       
+    </style>
+</head>
+<body>
+        <!-- Header -->
+    <header>
+        <div class="header-graphic"></div>
+        <div class="header-content">
+            <h1>Ética Geral e Profissional</h1>
+            <p>Fundamentos da ética e sua aplicação no contexto profissional e tecnológico</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>ArqSoft</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                <li><a href="detalhes.html"><i class="fas fa-info-circle"></i> Detalhes</a></li>
+                <li><a href="bd.html"><i class="fas fa-database"></i> Big Data</a></li>
+                <li><a href="etica.html" class="active"><i class="fas fa-balance-scale"></i> Ética</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Docência do Ensino Superior</h1>
+            <p class="subtitle">Formação pedagógica para professores universitários</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="content">
+            <div class="sidebar">
+                <h2>Sumário</h2>
+                <div id="summary-list">
+                    <!-- O sumário será gerado via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="main-content">
+                <div id="content-pages">
+                    <!-- As páginas do conteúdo serão geradas via JavaScript -->
+                </div>
+                
+                <div class="nav-buttons">
+                    <button id="prev-btn" disabled>Anterior</button>
+                    <button id="next-btn">Próximo</button>
+                </div>
+                <div class="page-indicator">
+                    Página <span id="current-page">1</span> de <span id="total-pages">38</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados do PDF (estruturados)
+        const pdfData = [
+            { title: "Capa", content: "<h2>Docência Do Ensino Superior</h2>" },
+            { title: "Sumário", content: "<h2>Sumário</h2><ul><li>Introdução: Objetivos e Estrutura do Conteúdo</li><li>Didática e Identidade Docente no Ensino Superior</li><li>Perfil do Professor Universitário Contemporâneo</li><li>Aspectos Éticos e Pedagógicos da Docência Universitária</li><li>Desafios da Prática Docente no Ensino Superior</li><li>Formação Docente: Teoria e Prática</li><li>Tendências Contemporâneas na Formação de Professores</li><li>Saberes Docentes e Desenvolvimento Profissional</li><li>Reflexão Crítica sobre a Prática Pedagógica</li><li>Planejamento e Organização do Trabalho Pedagógico</li><li>Plano de Ensino: Elementos Estruturantes</li><li>Elaboração de Planos de Aula Eficazes</li><li>Objetivos, Conteúdos e Avaliação: Uma Abordagem Integrada</li><li>Métodos e Metodologias de Ensino no Ensino Superior</li><li>Abordagens Ativas de Ensino-Aprendizagem</li><li>Estratégias Didáticas Inovadoras</li><li>Promoção da Participação e Engajamento dos Estudantes</li><li>Diversificação das Atividades Formativas</li><li>Integração das TICs no Processo de Ensino-Aprendizagem</li><li>TICs na Educação Superior: Novas Perspectivas</li><li>Desafios e Oportunidades das TICs na Docência</li><li>Recursos Tecnológicos Aplicados à Docência Universitária</li><li>Desenvolvimento de Materiais Didáticos Digitais</li><li>Mediação Pedagógica em Ambientes Virtuais de Aprendizagem</li><li>Instrumentos e Técnicas de Avaliação</li><li>Concepções, Princípios e Tipos de Avaliação</li><li>Feedback e Acompanhamento da Aprendizagem</li><li>Formação Continuada e Atualização Pedagógica</li><li>Desenvolvimento Profissional Docente</li><li>Pesquisa e Inovação na Prática Docente</li><li>Leitura Complementar</li><li>Referências Bibliográficas</li></ul>" },
+            { title: "Introdução", content: "<h2>Docência Do Ensino Superior</h2><p>A docência no ensino superior exige uma profunda compreensão do papel do professor como mediador do conhecimento, construtor de aprendizagens e agente de transformação social. Esta apostila tem como objetivo oferecer uma base sólida para a formação de professores universitários, explorando os diferentes aspectos da docência em um contexto contemporâneo e desafiador.</p><p>Abordaremos temas cruciais, como a construção da identidade docente, o planejamento estratégico de aulas, o uso de diferentes métodos e metodologias de ensino, a integração de tecnologias digitais e a importância da pesquisa e da avaliação em uma perspectiva de formação continuada.</p><p>Com este material, você encontrará subsídios para desenvolver competências essenciais para a docência no ensino superior, como a comunicação eficaz, a gestão de tempo e recursos, a avaliação crítica e reflexiva, o desenvolvimento de atividades pedagógicas inovadoras e a utilização consciente das tecnologias digitais.</p>" },
+            // As outras páginas seriam adicionadas aqui seguindo o mesmo padrão
+            { title: "Leitura Complementar", content: "<h2>Leitura Complementar</h2><ul><li>Libâneo, José Carlos. Didática. São Paulo: Cortez, 2013.</li><li>Pimenta, Selma Garrido; Coda, Rosita. O Professor e o Currículo: Uma Perspectiva Sociocrítica. São Paulo: Cortez, 2018.</li><li>Saviani, Dermeval. Escola e Democracia. São Paulo: Cortez, 2017.</li><li>Freire, Paulo. Pedagogia da Autonomia: Saberes Necessários à Prática Educativa. São Paulo: Paz e Terra, 2016.</li><li>Gadotti, Moacir. Pedagogia da Práxis. São Paulo: Cortez, 2016.</li><li>Pimenta, Selma Garrido. Docência no Ensino Superior. São Paulo: Cortez, 2012.</li><li>Demo, Pedro. Educação e Aprendizagem do Ensino Superior. São Paulo: Cortez, 2014.</li><li>Moran, José Manuel; Massetti, Mônica Regina; Behrens, Maura Regina (Org.). Novas Tecnologias e Mediação Pedagógica. Campinas: Papirus, 2019.</li><li>Lüdke, Menga; André, Marli Eliza Dal Pizzol. Pesquisa em Educação: Abordagens Qualitativas. São Paulo: Pioneira, 2018.</li></ul>" },
+            { title: "Referências Bibliográficas", content: "<h2>Referências Bibliográficas</h2><div class='references'><p class='reference-item'>ALVES, N. (2012). A Pedagogia da Questão: desafios e perspectivas. Rio de Janeiro: Editora Vozes.</p><p class='reference-item'>FREIRE, P. (2011). Pedagogia da Autonomia: saberes necessários à prática educativa. São Paulo: Paz e Terra.</p><p class='reference-item'>LIBÂNEO, J. C. (2013). Didática. São Paulo: Cortez.</p><p class='reference-item'>LUCKESI, C. C. (2011). Avaliação da Aprendizagem Escolar: estudos e práticas. São Paulo: Cortez.</p><p class='reference-item'>PIMENTA, S. G.; LIMA, M. S. L. (2012). O professor e o currículo: uma análise crítica. Rio de Janeiro: Cortez.</p><p class='reference-item'>SANTOS, W. L. P. dos. (2015). Didática: ensino superior. 1 ed. São Paulo: Editora Cengage Learning.</p><p class='reference-item'>SAVIANI, D. (2011). Educação: do senso comum à consciência filosófica. Campinas: Autores Associados.</p><p class='reference-item'>CURY, C. R. J. (2008). Gestão Educacional: desafios da escola pública brasileira. São Paulo: Editora Cortez.</p><p class='reference-item'>GADOTTI, M. (2000). Pedagogia da Práxis. São Paulo: Editora Cortez.</p><p class='reference-item'>GARCIA, R. (2016). Formação de Professores para a Diversidade. São Paulo: Editora Cortez.</p><p class='reference-item'>HERNÁNDEZ, F. (2006). Transformação da escola em espaço de aprendizagem: uma proposta para a construção do conhecimento. Porto Alegre: Artmed.</p><p class='reference-item'>LIBÂNEO, J. C. (1994). Didática. São Paulo: Cortez.</p><p class='reference-item'>NOVAES, R. (2002). A escola e as novas tecnologias: desafios e oportunidades. São Paulo: Editora Cortez.</p><p class='reference-item'>PERRENOUD, P. (2000). A pedagogia diferenciada: das necessidades aos recursos. Porto Alegre: Artmed.</p><p class='reference-item'>SACRISTÁN, J. G. (2000). O currículo: uma reflexão sobre a prática. Porto Alegre: Artmed.</p></div>" }
+        ];
+
+        // Estado atual da navegação
+        let currentPage = 0;
+        const totalPages = pdfData.length;
+
+        // Elementos DOM
+        const summaryList = document.getElementById('summary-list');
+        const contentPages = document.getElementById('content-pages');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const currentPageSpan = document.getElementById('current-page');
+        const totalPagesSpan = document.getElementById('total-pages');
+
+        // Inicializar a página
+        function initPage() {
+            // Atualizar indicador de páginas
+            totalPagesSpan.textContent = totalPages;
+            updatePageIndicator();
+            
+            // Gerar sumário
+            generateSummary();
+            
+            // Gerar páginas de conteúdo
+            generateContentPages();
+            
+            // Mostrar a primeira página
+            showPage(currentPage);
+            
+            // Configurar event listeners para os botões
+            prevBtn.addEventListener('click', goToPrevPage);
+            nextBtn.addEventListener('click', goToNextPage);
+        }
+
+        // Gerar o sumário
+        function generateSummary() {
+            pdfData.forEach((page, index) => {
+                const summaryItem = document.createElement('div');
+                summaryItem.className = 'summary-item';
+                summaryItem.textContent = `${index + 1}. ${page.title}`;
+                summaryItem.addEventListener('click', () => showPage(index));
+                summaryList.appendChild(summaryItem);
+            });
+        }
+
+        // Gerar as páginas de conteúdo
+        function generateContentPages() {
+            pdfData.forEach((page, index) => {
+                const pageElement = document.createElement('div');
+                pageElement.className = 'page';
+                pageElement.id = `page-${index}`;
+                pageElement.innerHTML = page.content;
+                contentPages.appendChild(pageElement);
+            });
+        }
+
+        // Mostrar uma página específica
+        function showPage(pageIndex) {
+            // Ocultar todas as páginas
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Mostrar a página solicitada
+            document.getElementById(`page-${pageIndex}`).classList.add('active');
+            
+            // Atualizar o estado atual
+            currentPage = pageIndex;
+            
+            // Atualizar os botões de navegação
+            updateNavigationButtons();
+            
+            // Atualizar o indicador de página
+            updatePageIndicator();
+            
+            // Rolagem para o topo
+            window.scrollTo(0, 0);
+        }
+
+        // Atualizar os botões de navegação
+        function updateNavigationButtons() {
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === totalPages - 1;
+        }
+
+        // Atualizar o indicador de página
+        function updatePageIndicator() {
+            currentPageSpan.textContent = currentPage + 1;
+        }
+
+        // Ir para a página anterior
+        function goToPrevPage() {
+            if (currentPage > 0) {
+                showPage(currentPage - 1);
+            }
+        }
+
+        // Ir para a próxima página
+        function goToNextPage() {
+            if (currentPage < totalPages - 1) {
+                showPage(currentPage + 1);
+            }
+        }
+
+        // Inicializar a página quando o DOM estiver carregado
+        document.addEventListener('DOMContentLoaded', initPage);
+    </script>
+</body>
+</html>
